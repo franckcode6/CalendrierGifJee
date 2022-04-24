@@ -63,4 +63,16 @@ public class EmotionServiceImpl implements EmotionService {
 		return null;
 	}
 
+	/**
+	 * Méthode permettant de supprimer un élément par son id
+	 */
+	public void supprimerEmotion(Long id) {
+		for (Emotion emotion : emotions) {
+			if (emotion.getId().equals(id)) {
+				emotions.remove(emotion);
+			}
+		}
+
+	}
+
 }

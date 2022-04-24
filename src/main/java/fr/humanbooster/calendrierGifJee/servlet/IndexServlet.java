@@ -49,6 +49,7 @@ public class IndexServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		//emotionService.supprimerEmotion((long) 2);
 		// Mise en place de l'affichage HTML
 		response.getWriter().append("<!DOCTYPE html><html><body>\n");
 		// Récupération des émotions via emotionServices
@@ -56,10 +57,10 @@ public class IndexServlet extends HttpServlet {
 			// Récupéartion du code de chaque Emotion
 			response.getWriter().append(emotion.getCode() + "<br>\n");
 		}
-		//TEST
+		// TEST
 		response.getWriter().append(emotionService.recupererEmotion("Coeur").getCode() + "<br>\n");
 		response.getWriter().append(emotionService.recupererEmotion((long) 1).getCode() + "<br>\n");
-		//FIN TEST
+		// FIN TEST
 		response.getWriter().append("</body></html>");
 	}
 
