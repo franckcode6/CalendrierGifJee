@@ -18,7 +18,7 @@ public interface EmotionService {
 	
 	List<Emotion> recupererEmotions();
 	
-	//Emotion recupererEmotion(Long id);
+	Emotion recupererEmotion(Long id);
 	
-	//Emotion recupererEmotion(String nom);
+	Emotion recupererEmotion(String nom);
 }

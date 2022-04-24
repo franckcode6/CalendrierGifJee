@@ -50,13 +50,16 @@ public class IndexServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// Mise en place de l'affichage HTML
-		response.getWriter().append("Served at: ").append("<!DOCTYPE html><html><body\n");
+		response.getWriter().append("<!DOCTYPE html><html><body>\n");
 		// Récupération des émotions via emotionServices
 		for (Emotion emotion : emotionService.recupererEmotions()) {
 			// Récupéartion du code de chaque Emotion
 			response.getWriter().append(emotion.getCode() + "<br>\n");
 		}
-		// Fin de l'affichage HTML
+		//TEST
+		response.getWriter().append(emotionService.recupererEmotion("Coeur").getCode() + "<br>\n");
+		response.getWriter().append(emotionService.recupererEmotion((long) 1).getCode() + "<br>\n");
+		//FIN TEST
 		response.getWriter().append("</body></html>");
 	}
 

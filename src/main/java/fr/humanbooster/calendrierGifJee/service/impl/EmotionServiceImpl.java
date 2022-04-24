@@ -24,7 +24,7 @@ public class EmotionServiceImpl implements EmotionService {
 	 */
 	@Override
 	public Emotion ajouterEmotion(String nom, String code) {
-		Emotion emotion = new Emotion();
+		Emotion emotion = new Emotion(nom, code);
 		emotions.add(emotion);
 		return emotion;
 	}
@@ -40,15 +40,27 @@ public class EmotionServiceImpl implements EmotionService {
 	/**
 	 * Méthode permettant de récupérer une émotion par id
 	 */
-	/*
-	 * @Override public Emotion recupererEmotion(Long id) { return null; }
-	 */
+	@Override
+	public Emotion recupererEmotion(Long id) {
+		for (Emotion emotion : emotions) {
+			if (emotion.getId().equals(id)) {
+				return emotion;
+			}
+		}
+		return null;
+	}
 
-	/*
+	/**
 	 * Méthode permettant de récupérer une émotion par nom
 	 */
-	/*
-	 * @Override public Emotion recupererEmotion(String nom) { return null; }
-	 */
+	@Override
+	public Emotion recupererEmotion(String nom) {
+		for (Emotion emotion : emotions) {
+			if (emotion.getNom().equals(nom)) {
+				return emotion;
+			}
+		}
+		return null;
+	}
 
 }
