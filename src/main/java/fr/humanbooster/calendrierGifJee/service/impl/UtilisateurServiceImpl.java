@@ -47,9 +47,9 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	 */
 	@Override
 	public Utilisateur recupererUtilisateur(String nom) {
-		for (Utilisateur theme : utilisateurs) {
-			if (theme.getNom().equals(nom)) {
-				return theme;
+		for (Utilisateur utilisateur : utilisateurs) {
+			if (utilisateur.getNom().equals(nom)) {
+				return utilisateur;
 			}
 		}
 		return null;
@@ -59,9 +59,9 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	 * Méthode permettant de supprimer un utilisateur par son id
 	 */
 	public void supprimerUtilisateur(Long id) {
-		for (Utilisateur theme : utilisateurs) {
-			if (theme.getId().equals(id)) {
-				utilisateurs.remove(theme);
+		for (Utilisateur utilisateur : utilisateurs) {
+			if (utilisateur.getId().equals(id)) {
+				utilisateurs.remove(utilisateur);
 			}
 		}
 
