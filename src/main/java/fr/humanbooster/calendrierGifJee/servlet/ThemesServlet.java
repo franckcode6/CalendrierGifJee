@@ -14,20 +14,21 @@ import fr.humanbooster.calendrierGifJee.service.impl.ThemeServiceImpl;
 /**
  * Servlet implementation class ThemesServlet
  */
-@WebServlet("/themes")
+//@WebServlet est une annotation
+@WebServlet(urlPatterns = "/themes", loadOnStartup = 1)
 public class ThemesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static ThemeService themeService = new ThemeServiceImpl();
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ThemesServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-    
-    /**
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public ThemesServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
 	 * Création d'une liste de thèmes si la liste est vide
 	 */
 	@Override
@@ -41,9 +42,11 @@ public class ThemesServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("<!DOCTYPE html><html><body>\n");
 		for (Theme theme : themeService.recupererThemes()) {
@@ -53,9 +56,11 @@ public class ThemesServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
