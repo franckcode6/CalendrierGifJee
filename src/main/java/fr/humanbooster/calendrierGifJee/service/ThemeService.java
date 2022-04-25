@@ -25,7 +25,7 @@ public interface ThemeService {
 	 * Méthode permettant de récupérer un thème par nom
 	 */
 	Theme recupererTheme(String nom);
-	
+
 	/**
 	 * Méthode permettant de supprimer un thème
 	 */

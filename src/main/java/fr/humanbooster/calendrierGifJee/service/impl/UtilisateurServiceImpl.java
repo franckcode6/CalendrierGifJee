@@ -8,7 +8,7 @@ import fr.humanbooster.calendrierGifJee.business.Utilisateur;
 import fr.humanbooster.calendrierGifJee.service.UtilisateurService;
 
 public class UtilisateurServiceImpl implements UtilisateurService {
-	
+
 	private static List<Utilisateur> utilisateurs = new ArrayList<>();
 
 	/**

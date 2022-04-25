@@ -2,7 +2,6 @@ package fr.humanbooster.calendrierGifJee.servlet;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.Calendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.humanbooster.calendrierGifJee.business.Emotion;
-import fr.humanbooster.calendrierGifJee.business.Jour;
 import fr.humanbooster.calendrierGifJee.service.EmotionService;
 import fr.humanbooster.calendrierGifJee.service.JourService;
 import fr.humanbooster.calendrierGifJee.service.impl.EmotionServiceImpl;
@@ -35,12 +33,13 @@ public class IndexServlet extends HttpServlet {
 	}
 
 	/**
-	 * Création d'une liste d'émotions si la liste est vide
+	 * Création des listes à l'initiation de la servlet
 	 */
 	@Override
 	public void init() throws ServletException {
 		super.init();
 		System.out.println("Init!");
+		//Ajout des émotions
 		if (emotionService.recupererEmotions().isEmpty()) {
 			emotionService.ajouterEmotion("Souriant", "&#x1F600;");
 			emotionService.ajouterEmotion("Monocle", "&#x1F9D0;");
@@ -49,6 +48,7 @@ public class IndexServlet extends HttpServlet {
 			emotionService.ajouterEmotion("PTDR", "&#x1F923;");
 		}
 		
+		//Ajout des jours d'avril
 		if (jourService.recupererJours().isEmpty()) {
 			for (int i = 0; i < 30; i++) {
 				jourService.ajouterJour(LocalDate.of(2022, 04, 01).plusDays((long) i));
@@ -72,12 +72,12 @@ public class IndexServlet extends HttpServlet {
 		}
 
 		// TEST
-		//response.getWriter().append(emotionService.recupererEmotion("Coeur").getCode() + "<br>\n");
-		//response.getWriter().append(emotionService.recupererEmotion((long) 1).getCode() + "<br>\n");
+		// response.getWriter().append(emotionService.recupererEmotion("Coeur").getCode() + "<br>\n");
+		// response.getWriter().append(emotionService.recupererEmotion((long) 1).getCode() + "<br>\n");
+		//System.out.println(jourService.recupererJours());
 		// FIN TEST
 
 		response.getWriter().append("</body></html>");
-		
 	}
 
 	/**
