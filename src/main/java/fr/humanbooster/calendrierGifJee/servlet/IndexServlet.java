@@ -14,7 +14,7 @@ import fr.humanbooster.calendrierGifJee.service.impl.EmotionServiceImpl;
 /**
  * Servlet implementation class IndexServlet
  */
-@WebServlet("/index")
+@WebServlet("/")
 public class IndexServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static EmotionService emotionService = new EmotionServiceImpl();
@@ -49,18 +49,20 @@ public class IndexServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//emotionService.supprimerEmotion((long) 2);
+		// emotionService.supprimerEmotion((long) 2);
 		// Mise en place de l'affichage HTML
 		response.getWriter().append("<!DOCTYPE html><html><body>\n");
 		// Récupération des émotions via emotionServices
 		for (Emotion emotion : emotionService.recupererEmotions()) {
 			// Récupéartion du code de chaque Emotion
-			response.getWriter().append(emotion.getCode() + "<br>\n");
+			response.getWriter().append(emotion.getId() + " : " + emotion.getCode() + "<br>\n");
 		}
+
 		// TEST
-		response.getWriter().append(emotionService.recupererEmotion("Coeur").getCode() + "<br>\n");
-		response.getWriter().append(emotionService.recupererEmotion((long) 1).getCode() + "<br>\n");
+		//response.getWriter().append(emotionService.recupererEmotion("Coeur").getCode() + "<br>\n");
+		//response.getWriter().append(emotionService.recupererEmotion((long) 1).getCode() + "<br>\n");
 		// FIN TEST
+
 		response.getWriter().append("</body></html>");
 	}
 

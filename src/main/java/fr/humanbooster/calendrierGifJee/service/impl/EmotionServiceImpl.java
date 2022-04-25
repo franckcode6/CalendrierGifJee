@@ -20,7 +20,7 @@ public class EmotionServiceImpl implements EmotionService {
 	private static List<Emotion> emotions = new ArrayList<>();
 
 	/**
-	 * Méthode permettant d'ajouter une Emotion à la liste d'émotions
+	 * Méthode permettant d'ajouter un Theme à la liste d'émotions
 	 */
 	@Override
 	public Emotion ajouterEmotion(String nom, String code) {
