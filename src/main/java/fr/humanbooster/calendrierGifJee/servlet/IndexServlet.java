@@ -1,6 +1,9 @@
 package fr.humanbooster.calendrierGifJee.servlet;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.Calendar;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,8 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.humanbooster.calendrierGifJee.business.Emotion;
+import fr.humanbooster.calendrierGifJee.business.Jour;
 import fr.humanbooster.calendrierGifJee.service.EmotionService;
+import fr.humanbooster.calendrierGifJee.service.JourService;
 import fr.humanbooster.calendrierGifJee.service.impl.EmotionServiceImpl;
+import fr.humanbooster.calendrierGifJee.service.impl.JourServiceImpl;
 
 /**
  * Servlet implementation class IndexServlet
@@ -18,6 +24,7 @@ import fr.humanbooster.calendrierGifJee.service.impl.EmotionServiceImpl;
 public class IndexServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static EmotionService emotionService = new EmotionServiceImpl();
+	private static JourService jourService = new JourServiceImpl();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -40,6 +47,12 @@ public class IndexServlet extends HttpServlet {
 			emotionService.ajouterEmotion("Bisous", "&#x1F618;");
 			emotionService.ajouterEmotion("Coeur", "&#x1F60D;");
 			emotionService.ajouterEmotion("PTDR", "&#x1F923;");
+		}
+		
+		if (jourService.recupererJours().isEmpty()) {
+			for (int i = 0; i < 30; i++) {
+				jourService.ajouterJour(LocalDate.of(2022, 04, 01).plusDays((long) i));
+			}
 		}
 	}
 
@@ -64,6 +77,7 @@ public class IndexServlet extends HttpServlet {
 		// FIN TEST
 
 		response.getWriter().append("</body></html>");
+		
 	}
 
 	/**

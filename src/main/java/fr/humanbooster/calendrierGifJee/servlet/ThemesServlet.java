@@ -47,7 +47,6 @@ public class ThemesServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("<!DOCTYPE html><html><body>\n");
 		for (Theme theme : themeService.recupererThemes()) {
 			response.getWriter().append(theme.getId() + " : " + theme.getNom() + "<br>\n");

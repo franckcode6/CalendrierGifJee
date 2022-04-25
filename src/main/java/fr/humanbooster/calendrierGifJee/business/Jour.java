@@ -15,6 +15,10 @@ public class Jour {
     	date = LocalDate.now();
     }
     
+    public Jour(LocalDate date) {
+    	this.date = date;
+    }
+    
     public Jour(int nbPoints, Gif gif) {
     	this();
 		this.nbPoints = nbPoints;
