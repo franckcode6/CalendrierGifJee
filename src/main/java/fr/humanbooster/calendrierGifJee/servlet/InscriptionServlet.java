@@ -7,8 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.humanbooster.calendrierGifJee.business.Theme;
+import fr.humanbooster.calendrierGifJee.service.ThemeService;
 import fr.humanbooster.calendrierGifJee.service.UtilisateurService;
+import fr.humanbooster.calendrierGifJee.service.impl.ThemeServiceImpl;
 import fr.humanbooster.calendrierGifJee.service.impl.UtilisateurServiceImpl;
 
 /**
@@ -18,6 +19,7 @@ import fr.humanbooster.calendrierGifJee.service.impl.UtilisateurServiceImpl;
 public class InscriptionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static UtilisateurService utilisateurService = new UtilisateurServiceImpl();
+	private static ThemeService themeService = new ThemeServiceImpl();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -32,7 +34,7 @@ public class InscriptionServlet extends HttpServlet {
 		super.init();
 		System.out.println("Init!");
 		if (utilisateurService.recupererUtilisateurs().isEmpty()) {
-			utilisateurService.ajouterUtilisateur("Ito", "Delphine", "d@hb.com", "123", new Theme("Bachata"));
+			utilisateurService.ajouterUtilisateur("Ito", "Delphine", "d@hb.com", "123", themeService.recupererTheme("Bachata"));
 		}
 	}
 
