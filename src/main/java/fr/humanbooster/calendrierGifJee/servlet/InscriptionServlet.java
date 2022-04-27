@@ -33,6 +33,7 @@ public class InscriptionServlet extends HttpServlet {
 	public void init() throws ServletException {
 		super.init();
 		System.out.println("Init!");
+		//Création d'une utilisatrice par défaut
 		if (utilisateurService.recupererUtilisateurs().isEmpty()) {
 			utilisateurService.ajouterUtilisateur("Ito", "Delphine", "d@hb.com", "123",
 					themeService.recupererTheme("Bachata"));
@@ -45,7 +46,7 @@ public class InscriptionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Envoyer la liste des thèmes à l'objet request
+		// Envoi de la liste des thèmes à l'objet request
 		request.setAttribute("themes", themeService.recupererThemes());
 		request.getRequestDispatcher("WEB-INF/inscription.jsp").forward(request, response);
 	}
@@ -56,20 +57,25 @@ public class InscriptionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		//On stock la saisie de l'utilisateur dans le formulaire inscription.jsp
 		String nomUtilisateur = request.getParameter("nom");
 		String prenomUtilisateur = request.getParameter("prenom");
 		String emailUtilisateur = request.getParameter("email");
 		String mdpUtilisateur = request.getParameter("mot_de_passe");
 		String themeUtilisateur = request.getParameter("theme_id");
 		
+		//On appelle la méthode ajouterUtilisateur de utilisateurService
+		//On passe en paramètre de cette méthode les varaibales précédemment créées
 		utilisateurService.ajouterUtilisateur(
 				nomUtilisateur, 
 				prenomUtilisateur, 
 				emailUtilisateur, 
 				mdpUtilisateur,
 				themeService.recupererTheme(themeUtilisateur));
+		System.out.println(utilisateurService.recupererUtilisateurs());
 		
-		request.getRequestDispatcher("/index").forward(request, response);
+		//On redirige l'utilisateur après validation du formulaire
+		request.getRequestDispatcher("index.html").forward(request, response);
 		doGet(request, response);
 	}
 

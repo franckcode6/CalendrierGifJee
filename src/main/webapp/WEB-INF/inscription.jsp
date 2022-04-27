@@ -11,7 +11,7 @@
 <body>
 	<h1>Inscription</h1>
 	<form
-		action="https://www.digital-learning-hb.com/moodle_hb/pluginfile.php/31361/mod_resource/content/0/inscription"
+		action=""
 		method="post">
 		<label>Nom</label>
 		<input name="nom">
@@ -33,7 +33,7 @@
 		<select name="theme_id">
 		<option value="0">Merci de choisir un thème</option>
 		<c:forEach items="${themes}" var="theme">
-		<option value="${theme.id}">${theme.nom}</option>
+		<option value="${theme.nom}">${theme.nom}</option>
 		</c:forEach>
 		
 		</select><br> <input type="submit" value="Inscription">
