@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import fr.humanbooster.calendrierGifJee.business.Emotion;
 import fr.humanbooster.calendrierGifJee.service.EmotionService;
-import fr.humanbooster.calendrierGifJee.service.JourService;
 import fr.humanbooster.calendrierGifJee.service.impl.EmotionServiceImpl;
-import fr.humanbooster.calendrierGifJee.service.impl.JourServiceImpl;
 
 /**
  * Servlet implementation class IndexServlet
@@ -22,7 +20,6 @@ import fr.humanbooster.calendrierGifJee.service.impl.JourServiceImpl;
 public class IndexServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static EmotionService emotionService = new EmotionServiceImpl();
-	private static JourService jourService = new JourServiceImpl();
 
 	/**
 	 * @see HttpServlet#HttpServlet()

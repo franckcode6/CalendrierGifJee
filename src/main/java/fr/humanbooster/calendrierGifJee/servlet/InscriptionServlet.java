@@ -60,6 +60,14 @@ public class InscriptionServlet extends HttpServlet {
 		String prenomUtilisateur = request.getParameter("prenom");
 		String emailUtilisateur = request.getParameter("email");
 		String mdpUtilisateur = request.getParameter("mot_de_passe");
+		String themeUtilisateur = request.getParameter("theme_id");
+		
+		utilisateurService.ajouterUtilisateur(
+				nomUtilisateur, 
+				prenomUtilisateur, 
+				emailUtilisateur, 
+				mdpUtilisateur,
+				themeService.recupererTheme(themeUtilisateur));
 		
 		request.getRequestDispatcher("/index").forward(request, response);
 		doGet(request, response);
