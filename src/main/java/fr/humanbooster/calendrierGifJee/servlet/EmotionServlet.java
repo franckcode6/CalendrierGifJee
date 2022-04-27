@@ -16,15 +16,15 @@ import fr.humanbooster.calendrierGifJee.service.impl.EmotionServiceImpl;
 /**
  * Servlet implementation class IndexServlet
  */
-@WebServlet("/index")
-public class IndexServlet extends HttpServlet {
+@WebServlet("/emotions")
+public class EmotionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static EmotionService emotionService = new EmotionServiceImpl();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public IndexServlet() {
+	public EmotionServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
