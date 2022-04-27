@@ -36,7 +36,7 @@
 		<select name="theme_id">
 		<option value="0">Merci de choisir un thème</option>
 		<c:forEach items="${themes}" var="theme">
-		<option value="${theme.nom}">${theme.nom}</option>
+		<option value="${theme.id}">${theme.nom}</option>
 		</c:forEach>
 		
 		</select><br> <input type="submit" value="Inscription">

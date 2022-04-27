@@ -57,7 +57,7 @@ public class InscriptionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//On stock la saisie de l'utilisateur dans le formulaire inscription.jsp
+		//On stock la saisie de l'utilisateur du formulaire inscription.jsp
 		String nomUtilisateur = request.getParameter("nom");
 		String prenomUtilisateur = request.getParameter("prenom");
 		String emailUtilisateur = request.getParameter("email");
@@ -71,7 +71,7 @@ public class InscriptionServlet extends HttpServlet {
 				prenomUtilisateur, 
 				emailUtilisateur, 
 				mdpUtilisateur,
-				themeService.recupererTheme(themeUtilisateur));
+				themeService.recupererTheme(Long.parseLong(themeUtilisateur)));
 		System.out.println(utilisateurService.recupererUtilisateurs());
 		
 		//On redirige l'utilisateur après validation du formulaire
