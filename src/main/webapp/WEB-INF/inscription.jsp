@@ -6,12 +6,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Inscription</title>
-<link rel="stylesheet" type="text/css" href="style/theme1.css">
-
 <style type="text/css">
   <%@include file="style/theme1.css" %>
 </style>
 </head>
+
 <body>
 	<h1>Inscription</h1>
 	<form

@@ -64,8 +64,8 @@ public class InscriptionServlet extends HttpServlet {
 		String mdpUtilisateur = request.getParameter("mot_de_passe");
 		String themeUtilisateur = request.getParameter("theme_id");
 		
-		//On appelle la méthode ajouterUtilisateur de utilisateurService
-		//On passe en paramètre de cette méthode les varaibales précédemment créées
+		//On appelle la méthode ajouterUtilisateur() de utilisateurService
+		//On passe en paramètres de cette méthode les variables précédemment créées
 		utilisateurService.ajouterUtilisateur(
 				nomUtilisateur, 
 				prenomUtilisateur, 
