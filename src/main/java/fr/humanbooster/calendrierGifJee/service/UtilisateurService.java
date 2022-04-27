@@ -15,6 +15,8 @@ public interface UtilisateurService {
 
 	public Utilisateur recupererUtilisateur(String nom);
 
+	public boolean authentifierUtilisateur(String email, String motDePasse);
+
 	public void supprimerUtilisateur(Long id);
 
 }

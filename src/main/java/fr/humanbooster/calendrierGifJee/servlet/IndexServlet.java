@@ -43,15 +43,18 @@ public class IndexServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String emailUtilisateur = request.getParameter("email");
+		// System.out.println(emailUtilisateur);
 		String mdpUtilisateur = request.getParameter("mot_de_passe");
+		// System.out.println(mdpUtilisateur);
 
-		for (Utilisateur utilisateur : utilisateurService.recupererUtilisateurs()) {
-			if (emailUtilisateur == utilisateur.getEmail() && mdpUtilisateur == utilisateur.getMotDePasse()) {
-				request.getRequestDispatcher("WEB-INF/calendrier.jsp").forward(request, response);
-			}
+		if (utilisateurService.authentifierUtilisateur(emailUtilisateur, mdpUtilisateur)) {
+			System.out.println("connexion!");
+		} else {
+			System.out.println("Incorrect!");
 		}
-		System.out.println("Incorrect!");
-		doGet(request, response);
-	}
 
+		
+		doGet(request, response);
+
+	}
 }

@@ -76,7 +76,6 @@ public class InscriptionServlet extends HttpServlet {
 		
 		//On redirige l'utilisateur après validation du formulaire
 		request.getRequestDispatcher("index.html").forward(request, response);
-		doGet(request, response);
 	}
 
 }

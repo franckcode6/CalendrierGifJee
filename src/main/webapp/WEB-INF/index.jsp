@@ -12,16 +12,16 @@
 
 <body>
 	<h1>Calendrier Gif</h1>
-	
+
 	<form
 		action=""
 		method="post">
 		<input type="email" name="email" placeholder="Email">
-		<br> 
-			
+		<br>
+
 		<input type="password" name="mot_de_passe" placeholder="Mot de Passe">
-		<br> 
-		
+		<br>
+
 		<input type="submit" value="Connexion">
 	</form>
 </body>

@@ -56,6 +56,19 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	}
 
 	/**
+	 * Méthode permettant de récupérer un utilisateur par email
+	 */
+	@Override
+	public boolean authentifierUtilisateur(String email, String motDePasse) {
+		for (Utilisateur utilisateur : utilisateurs) {
+			if (utilisateur.getEmail().equals(email) && utilisateur.getMotDePasse().equals(motDePasse)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
 	 * Méthode permettant de supprimer un utilisateur par son id
 	 */
 	public void supprimerUtilisateur(Long id) {
