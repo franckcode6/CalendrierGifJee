@@ -34,7 +34,8 @@ public class InscriptionServlet extends HttpServlet {
 		super.init();
 		System.out.println("Init!");
 		if (utilisateurService.recupererUtilisateurs().isEmpty()) {
-			utilisateurService.ajouterUtilisateur("Ito", "Delphine", "d@hb.com", "123", themeService.recupererTheme("Bachata"));
+			utilisateurService.ajouterUtilisateur("Ito", "Delphine", "d@hb.com", "123",
+					themeService.recupererTheme("Bachata"));
 		}
 	}
 
@@ -44,7 +45,8 @@ public class InscriptionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// TODO Envoyer la liste des thèmes à l'objet request
+		request.setAttribute("themes", themeService.recupererThemes());
 		request.getRequestDispatcher("WEB-INF/inscription.jsp").forward(request, response);
 	}
 
@@ -54,7 +56,12 @@ public class InscriptionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		String nomUtilisateur = request.getParameter("nom");
+		String prenomUtilisateur = request.getParameter("prenom");
+		String emailUtilisateur = request.getParameter("email");
+		String mdpUtilisateur = request.getParameter("mot_de_passe");
+		
+		request.getRequestDispatcher("/index").forward(request, response);
 		doGet(request, response);
 	}
 

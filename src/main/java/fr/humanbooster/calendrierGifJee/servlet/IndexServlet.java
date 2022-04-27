@@ -47,13 +47,6 @@ public class IndexServlet extends HttpServlet {
 			emotionService.ajouterEmotion("Coeur", "&#x1F60D;");
 			emotionService.ajouterEmotion("PTDR", "&#x1F923;");
 		}
-		
-		//Ajout des jours d'avril
-		if (jourService.recupererJours().isEmpty()) {
-			for (int i = 0; i < 30; i++) {
-				jourService.ajouterJour(LocalDate.of(2022, 04, 01).plusDays((long) i));
-			}
-		}
 	}
 
 	/**
@@ -70,12 +63,6 @@ public class IndexServlet extends HttpServlet {
 			// Récupéartion du code de chaque Emotion
 			response.getWriter().append(emotion.getId() + " : " + emotion.getCode() + "<br>\n");
 		}
-
-		// TEST
-		// response.getWriter().append(emotionService.recupererEmotion("Coeur").getCode() + "<br>\n");
-		// response.getWriter().append(emotionService.recupererEmotion((long) 1).getCode() + "<br>\n");
-		//System.out.println(jourService.recupererJours());
-		// FIN TEST
 
 		response.getWriter().append("</body></html>");
 	}

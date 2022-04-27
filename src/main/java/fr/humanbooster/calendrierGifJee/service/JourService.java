@@ -10,5 +10,7 @@ public interface JourService {
 	public Jour ajouterJour(LocalDate jour);
 
 	public List<Jour> recupererJours();
+	
+	List<Jour> recupererJours(LocalDate dateDebut, int nbJours);
 
 }
