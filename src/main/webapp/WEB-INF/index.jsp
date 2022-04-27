@@ -9,7 +9,20 @@
   <%@include file="style/theme1.css" %>
 </style>
 </head>
+
 <body>
 	<h1>Calendrier Gif</h1>
+	
+	<form
+		action=""
+		method="post">
+		<input type="email" name="email" placeholder="Email">
+		<br> 
+			
+		<input type="password" name="mot_de_passe" placeholder="Mot de Passe">
+		<br> 
+		
+		<input type="submit" value="Connexion">
+	</form>
 </body>
 </html>
