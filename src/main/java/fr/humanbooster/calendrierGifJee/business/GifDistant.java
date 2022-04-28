@@ -1,5 +1,7 @@
 package fr.humanbooster.calendrierGifJee.business;
 
+import java.util.List;
+
 public class GifDistant extends Gif {
 	
 	private String url;
@@ -10,8 +12,8 @@ public class GifDistant extends Gif {
     public GifDistant() {
     }
     
-	public GifDistant(String url) {
-		super();
+	public GifDistant(String url, String legende, List<Reaction> reactions, Jour jour, Utilisateur utilisateur) {
+		super(legende, reactions, jour, utilisateur);
 		this.url = url;
 	}
 

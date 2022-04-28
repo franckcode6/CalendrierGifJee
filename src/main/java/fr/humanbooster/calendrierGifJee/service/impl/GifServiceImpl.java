@@ -7,16 +7,34 @@ import fr.humanbooster.calendrierGifJee.business.Gif;
 import fr.humanbooster.calendrierGifJee.business.GifDistant;
 import fr.humanbooster.calendrierGifJee.business.Jour;
 import fr.humanbooster.calendrierGifJee.business.Reaction;
-import fr.humanbooster.calendrierGifJee.business.Theme;
 import fr.humanbooster.calendrierGifJee.business.Utilisateur;
 import fr.humanbooster.calendrierGifJee.service.GifService;
-import fr.humanbooster.calendrierGifJee.service.UtilisateurService;
 
 public class GifServiceImpl implements GifService {
 
-	private static List<Gif> gifs = new ArrayList<>();
-	
-	public Gif ajouterGif(String url, String legende, List<Reaction> reactions, Jour jour, Utilisateur utilisateur) {
-		Gif gif = new GifDistant(url, legende, reactions, jour, utilisateur);
+	private static List<GifDistant> gifDistants = new ArrayList<>();
+
+	@Override
+	public GifDistant ajouterGifDistant(String url, String legende, List<Reaction> reactions, Jour jour,
+			Utilisateur utilisateur) {
+		GifDistant gif = new GifDistant(url, legende, reactions, jour, utilisateur);
+		gifDistants.add(gif);
+		return gif;
 	}
+	
+	@Override
+	public List<GifDistant> recupererGifs() {
+		return gifDistants;
+	}
+	
+	@Override
+	public Gif recupererGif(String url) {
+		for (GifDistant gif : gifDistants) {
+			if (gif.getUrl() == url) {
+				return gif;
+			}
+		}
+		return null;
+	}
+	
 }
