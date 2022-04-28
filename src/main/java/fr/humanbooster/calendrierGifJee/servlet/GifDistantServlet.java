@@ -34,9 +34,9 @@ public class GifDistantServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = request.getParameter("url");
-		// System.out.println(emailUtilisateur);
+		System.out.println(url);
 		String legende = request.getParameter("legende");
-		// System.out.println(mdpUtilisateur);
+		System.out.println(legende);
 		doGet(request, response);
 	}
 

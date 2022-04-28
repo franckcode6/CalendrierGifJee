@@ -8,11 +8,12 @@
   <%@include file="style/theme1.css" %>
 </style>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Calendrier Gif</title>
 </head>
 <body>
 <header>
 <h1>Calendrier GIF, page d'accueil :)</h1>
+<!-- Affichage des informations utilisateur -->
 Utilisateur connecté:${sessionScope.utilisateur.nom} ${sessionScope.utilisateur.prenom} ${sessionScope.utilisateur.email}
 </header>
 <table>
@@ -25,17 +26,23 @@ Utilisateur connecté:${sessionScope.utilisateur.nom} ${sessionScope.utilisateur.
 		</tr>
 	</thead>
 	<tbody>
+<!-- 		Creation d'une boucle pour chaque jour dans mon tableau jours (cf CalendrierServlet)
+			On renvoie une ligne du tableau pour chaque élément -->
 		<c:forEach items="${jours}" var="jour">
 		<tr>
 			<td>${jour.date}</td>
 			
 			<td colspan="3">
+<!-- 			Debut de la condition -->
 				<c:choose>
+<!-- 				S'il n'y pas de gif correspondant au jour on affiche le nombre de
+					points du gif et l'url vers le formulaire d'ajout-->
 					<c:when test="${jour.gif eq null}">
 						<p>${jour.nbPoints} points</p>
 						<a href="gifdistant?date=${jour.date}">Placer un gif distant</a>
 					</c:when>
-				<c:otherwise><img src = "${jour.gif.url}"></c:otherwise>
+<!-- 					Sinon on affiche le gif grace à la balise img -->
+				<c:otherwise><img src ="${jour.gif.url}"></c:otherwise>
 				</c:choose>
 			</td>
 			<td colspan="3"></td>
