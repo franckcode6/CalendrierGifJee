@@ -11,7 +11,30 @@
 <title>Insert title here</title>
 </head>
 <body>
+<header>
 <h1>Calendrier GIF, page d'accueil :)</h1>
 Utilisateur connecté:${sessionScope.utilisateur.nom} ${sessionScope.utilisateur.prenom} ${sessionScope.utilisateur.email}
+</header>
+<table>
+	<thead>
+		<tr>
+			<th>Jour</th>
+			<th>Gif</th>
+			<th>Utilisateur</th>
+			<th>Reactions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach items="${jours}" var="jour">
+		<tr>
+			<td>${jour.date}</td>
+			<td>${jour.gif}</td>
+			<td></td>
+			<td></td>
+		</tr>
+		</c:forEach>
+	</tbody>
+</table>
+
 </body>
 </html>
