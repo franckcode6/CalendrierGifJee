@@ -75,7 +75,7 @@ public class InscriptionServlet extends HttpServlet {
 		System.out.println(utilisateurService.recupererUtilisateurs());
 		
 		//On redirige l'utilisateur après validation du formulaire
-		request.getRequestDispatcher("index.html").forward(request, response);
+		response.sendRedirect("index");
 	}
 
 }
