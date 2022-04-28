@@ -31,11 +31,11 @@ Utilisateur connecté:${sessionScope.utilisateur.nom} ${sessionScope.utilisateur.
 			
 			<td colspan="3">
 				<c:choose>
-					<c:when test="${jour.gif == null}">
+					<c:when test="${jour.gif eq null}">
 						<p>${jour.nbPoints} points</p>
-						<a href="index">Placer un gif distant</a>
+						<a href="gifdistant?date=${jour.date}">Placer un gif distant</a>
 					</c:when>
-				<c:otherwise>${jour.gif}</c:otherwise>
+				<c:otherwise><img src = "${jour.gif.url}"></c:otherwise>
 				</c:choose>
 			</td>
 			<td colspan="3"></td>
