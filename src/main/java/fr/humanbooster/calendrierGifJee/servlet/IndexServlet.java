@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.humanbooster.calendrierGifJee.business.Utilisateur;
 import fr.humanbooster.calendrierGifJee.service.UtilisateurService;
 import fr.humanbooster.calendrierGifJee.service.impl.UtilisateurServiceImpl;
 
@@ -47,10 +48,14 @@ public class IndexServlet extends HttpServlet {
 		// System.out.println(mdpUtilisateur);
 
 		if (utilisateurService.authentifierUtilisateur(emailUtilisateur, mdpUtilisateur)) {
-			System.out.println("connexion!");
+			//Si la connexion est bonne, on créé un objet Utilisateur grace au mail et au mdp indiqués dans le formulaire
+			Utilisateur utilisateur = utilisateurService.recupererUtilisateur(emailUtilisateur, mdpUtilisateur);
+			//On stock cet utilisateur dans la session
+			request.getSession().setAttribute("utilisateur", utilisateur);
+			//On redirige vers CalendrierServlet
 			response.sendRedirect("calendrier");
 		} else {
-			System.out.println("Incorrect!");
+			//Si Email ou Mdp incorrects, on recharge la page pour nouvelle saisie
 			response.sendRedirect("index");
 		}
 

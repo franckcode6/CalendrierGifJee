@@ -54,6 +54,19 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 		}
 		return null;
 	}
+	
+	/**
+	 * Méthode permettant de récupérer un utilisateur par nom
+	 */
+	@Override
+	public Utilisateur recupererUtilisateur(String email, String motDePasse) {
+		for (Utilisateur utilisateur : utilisateurs) {
+			if (utilisateur.getEmail().equals(email) && utilisateur.getMotDePasse().equals(motDePasse)) {
+				return utilisateur;
+			}
+		}
+		return null;
+	}
 
 	/**
 	 * Méthode permettant de récupérer un utilisateur par email

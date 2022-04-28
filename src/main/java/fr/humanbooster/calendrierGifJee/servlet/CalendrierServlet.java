@@ -26,7 +26,9 @@ public class CalendrierServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getAttribute("utilisateur");
 		request.getRequestDispatcher("WEB-INF/calendrier.jsp").forward(request, response);
+		System.out.println(request.getAttribute("utilisateur"));
 	}
 
 	/**
