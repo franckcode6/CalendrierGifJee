@@ -29,15 +29,4 @@ public class JourServiceImpl implements JourService {
 		return jours;
 	}
 
-	/**
-	 * Méthode permettant de créer un certain nombre de jours
-	 */
-	@Override
-	public List<Jour> recupererJours(LocalDate dateDebut, int nbJours) {
-		for (int i = 0; i < nbJours; i++) {
-			Jour jour = new Jour(dateDebut.plusDays((long) i));
-			jours.add(jour);
-		}
-		return jours;
-	}
 }

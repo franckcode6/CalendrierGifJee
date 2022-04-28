@@ -19,18 +19,27 @@ Utilisateur connecté:${sessionScope.utilisateur.nom} ${sessionScope.utilisateur.
 	<thead>
 		<tr>
 			<th>Jour</th>
-			<th>Gif</th>
-			<th>Utilisateur</th>
-			<th>Reactions</th>
+			<th colspan="5">Gif</th>
+			<th colspan="3">Utilisateur</th>
+			<th colspan="3">Reactions</th>
 		</tr>
 	</thead>
 	<tbody>
 		<c:forEach items="${jours}" var="jour">
 		<tr>
 			<td>${jour.date}</td>
-			<td>${jour.gif}</td>
-			<td></td>
-			<td></td>
+			
+			<td colspan="3">
+				<c:choose>
+					<c:when test="${jour.gif == null}">
+						<p>${jour.nbPoints} points</p>
+						<a href="index">Placer un gif distant</a>
+					</c:when>
+				<c:otherwise>${jour.gif}</c:otherwise>
+				</c:choose>
+			</td>
+			<td colspan="3"></td>
+			<td colspan="3"></td>
 		</tr>
 		</c:forEach>
 	</tbody>
