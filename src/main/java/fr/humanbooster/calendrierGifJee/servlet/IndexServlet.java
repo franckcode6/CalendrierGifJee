@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.humanbooster.calendrierGifJee.business.Utilisateur;
 import fr.humanbooster.calendrierGifJee.service.UtilisateurService;
 import fr.humanbooster.calendrierGifJee.service.impl.UtilisateurServiceImpl;
 
@@ -49,12 +48,11 @@ public class IndexServlet extends HttpServlet {
 
 		if (utilisateurService.authentifierUtilisateur(emailUtilisateur, mdpUtilisateur)) {
 			System.out.println("connexion!");
+			response.sendRedirect("calendrier");
 		} else {
 			System.out.println("Incorrect!");
+			response.sendRedirect("index");
 		}
-
-		
-		doGet(request, response);
 
 	}
 }
