@@ -20,9 +20,9 @@
 	<thead>
 		<tr>
 			<th>Jour</th>
-			<th colspan="5">Gif</th>
-			<th colspan="3">Utilisateur</th>
-			<th colspan="3">Reactions</th>
+			<th colspan="8">Gif</th>
+			<th colspan="5">Utilisateur</th>
+			<th colspan="5">Reactions</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -31,7 +31,7 @@
 		<c:forEach items="${jours}" var="jour">
 		<tr>
 			<td>${jour.date}</td>
-			<td colspan="3">
+			<td colspan="8">
 				<c:choose>
 					<c:when test="${jour.gif eq null}">
 						<p>${jour.nbPoints} points</p>
@@ -44,9 +44,9 @@
 				</c:choose>
 			</td>
 			
-			<td colspan="3">${jour.gif.utilisateur.prenom} ${jour.gif.utilisateur.nom}</td>
+			<td colspan="5">${jour.gif.utilisateur.prenom} ${jour.gif.utilisateur.nom}</td>
 			
-			<td>
+			<td colspan="5">
 				<ul>
 					<c:forEach items="${jour.gif.reactions}" var="reaction">
 						 <li>${reaction.emotion.code} ${reaction.utilisateur.prenom} ${reaction.utilisateur.nom}</li> 
