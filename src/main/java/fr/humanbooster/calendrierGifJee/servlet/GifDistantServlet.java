@@ -9,12 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.humanbooster.calendrierGifJee.business.Utilisateur;
 import fr.humanbooster.calendrierGifJee.service.GifService;
 import fr.humanbooster.calendrierGifJee.service.JourService;
-import fr.humanbooster.calendrierGifJee.service.UtilisateurService;
 import fr.humanbooster.calendrierGifJee.service.impl.GifServiceImpl;
 import fr.humanbooster.calendrierGifJee.service.impl.JourServiceImpl;
-import fr.humanbooster.calendrierGifJee.service.impl.UtilisateurServiceImpl;
 
 /**
  * Servlet implementation class GifDistantServlet
@@ -23,8 +22,7 @@ import fr.humanbooster.calendrierGifJee.service.impl.UtilisateurServiceImpl;
 public class GifDistantServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static GifService gifService = new GifServiceImpl();
-	private static JourService jourService = new JourServiceImpl();
-	private static UtilisateurService utilisateurService = new UtilisateurServiceImpl();
+	private static JourService jourService = new JourServiceImpl();;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -49,14 +47,15 @@ public class GifDistantServlet extends HttpServlet {
 		String legende = request.getParameter("legende");
 		//Récupération de la date contenue dans l'URL
 		LocalDate date = LocalDate.parse(request.getParameter("date"));
+		Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("utilisateur");
 		//Creation et ajout d'un gif distant dans le tableau de gifs
 		gifService.ajouterGifDistant(
 				url, 
 				legende, 
 				null, 
 				jourService.recupererJour(date), 
-				utilisateurService.recupererUtilisateurConnecte());
-		System.out.println(gifService.recupererGifs());
+				utilisateur);
+		//System.out.println(gifService.recupererGifs());
 		//Redirection vers la page calendrier
 		response.sendRedirect("calendrier");
 	}

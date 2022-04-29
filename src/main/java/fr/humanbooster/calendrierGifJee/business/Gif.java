@@ -29,6 +29,7 @@ public abstract class Gif {
 		this.utilisateur = utilisateur;
 		//On affecte l'objet en cours de cration au jour donné en paramètre
 		jour.setGif(this);
+		utilisateur.getGifs().add(this);
 	}
 
 	public Long getId() {

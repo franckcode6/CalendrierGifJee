@@ -25,6 +25,7 @@ public class Utilisateur {
     	id = ++compteur;
     	this.nbPoints = NB_POINTS_INITIAL;
     	dateHeureInscription = LocalDateTime.now();
+    	this.gifs = new ArrayList<Gif>();
     }
     
     public Utilisateur(String nom, String prenom, String email, String motDePasse, Theme theme) {

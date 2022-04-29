@@ -40,7 +40,7 @@ Utilisateur connecté:${sessionScope.utilisateur.nom} ${sessionScope.utilisateur.
 				<c:otherwise><img src ="${jour.gif.url}"></c:otherwise>
 				</c:choose>
 			</td>
-			<td colspan="3"></td>
+			<td colspan="3">${jour.gif.utilisateur.prenom} ${jour.gif.utilisateur.nom}</td>
 			<td colspan="3"></td>
 		</tr>
 		</c:forEach>

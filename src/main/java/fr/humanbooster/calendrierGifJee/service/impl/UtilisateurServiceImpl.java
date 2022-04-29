@@ -10,7 +10,6 @@ import fr.humanbooster.calendrierGifJee.service.UtilisateurService;
 public class UtilisateurServiceImpl implements UtilisateurService {
 
 	private static List<Utilisateur> utilisateurs = new ArrayList<>();
-	private static Utilisateur utilisateurConnecte = new Utilisateur();
 
 	/**
 	 * Méthode permettant d'ajouter un utilisateur
@@ -28,14 +27,6 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	@Override
 	public List<Utilisateur> recupererUtilisateurs() {
 		return utilisateurs;
-	}
-	
-	/**
-	 * Méthode permettant de récupérer l'utilisateur connecté
-	 */
-	@Override
-	public Utilisateur recupererUtilisateurConnecte() {
-		return utilisateurConnecte;
 	}
 
 	/**
@@ -84,7 +75,6 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	public boolean authentifierUtilisateur(String email, String motDePasse) {
 		for (Utilisateur utilisateur : utilisateurs) {
 			if (utilisateur.getEmail().equals(email) && utilisateur.getMotDePasse().equals(motDePasse)) {
-				utilisateur = utilisateurConnecte;
 				return true;
 			}
 		}
