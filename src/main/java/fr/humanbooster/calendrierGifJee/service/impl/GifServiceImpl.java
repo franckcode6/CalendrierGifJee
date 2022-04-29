@@ -26,5 +26,18 @@ public class GifServiceImpl implements GifService {
 	public List<Gif> recupererGifs() {
 		return gifs;
 	}
+	
+	/**
+	 * Méthode permettant de récupérer un Gif avec un ID
+	 */
+	@Override
+	public Gif recupererGif(Long id) {
+		for (Gif gif : gifs) {
+			if (gif.getId().equals(id)) {
+				return gif;
+			}
+		}
+		return null;
+	}
 		
 }
