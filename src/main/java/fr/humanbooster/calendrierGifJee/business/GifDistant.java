@@ -27,8 +27,11 @@ public class GifDistant extends Gif {
 
 	@Override
 	public String toString() {
-		return "GifDistant [url=" + url + "]";
+		return "GifDistant [url=" + url + ", id=" + id + ", dateHeureAjout=" + dateHeureAjout + ", legende=" + legende
+				+ ", jour=" + jour + ", getUrl()=" + getUrl() + ", getId()=" + getId() + ", getDateHeureAjout()="
+				+ getDateHeureAjout() + ", getJour()=" + getJour() + ", getReactions()=" + getReactions()
+				+ ", getLegende()=" + getLegende() + ", getUtilisateur()=" + getUtilisateur() + ", toString()="
+				+ super.toString() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
 	}
-	
     
 }

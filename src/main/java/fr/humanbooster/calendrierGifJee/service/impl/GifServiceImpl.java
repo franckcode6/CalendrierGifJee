@@ -12,29 +12,31 @@ import fr.humanbooster.calendrierGifJee.service.GifService;
 
 public class GifServiceImpl implements GifService {
 
-	private static List<GifDistant> gifDistants = new ArrayList<>();
+	private static List<Gif> gifs = new ArrayList<>();
 
 	@Override
-	public GifDistant ajouterGifDistant(String url, String legende, List<Reaction> reactions, Jour jour,
+	public Gif ajouterGifDistant(String url, String legende, List<Reaction> reactions, Jour jour,
 			Utilisateur utilisateur) {
-		GifDistant gif = new GifDistant(url, legende, reactions, jour, utilisateur);
-		gifDistants.add(gif);
+		Gif gif = new GifDistant(url, legende, reactions, jour, utilisateur);
+		gifs.add(gif);
 		return gif;
 	}
 	
 	@Override
-	public List<GifDistant> recupererGifs() {
-		return gifDistants;
+	public List<Gif> recupererGifs() {
+		return gifs;
 	}
 	
 	@Override
-	public Gif recupererGif(String url) {
-		for (GifDistant gif : gifDistants) {
-			if (gif.getUrl() == url) {
+	public Gif recupererGif(Jour jour) {
+		for (Gif gif : gifs) {
+			if (gif.getJour().equals(jour)) {
 				return gif;
 			}
 		}
 		return null;
 	}
+	
+	
 	
 }

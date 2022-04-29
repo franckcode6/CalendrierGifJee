@@ -11,4 +11,6 @@ public interface JourService {
 
 	public List<Jour> recupererJours();
 
+	public Jour recupererJour(LocalDate date);
+
 }

@@ -31,17 +31,12 @@ Utilisateur connecté:${sessionScope.utilisateur.nom} ${sessionScope.utilisateur.
 		<c:forEach items="${jours}" var="jour">
 		<tr>
 			<td>${jour.date}</td>
-			
 			<td colspan="3">
-<!-- 			Debut de la condition -->
 				<c:choose>
-<!-- 				S'il n'y pas de gif correspondant au jour on affiche le nombre de
-					points du gif et l'url vers le formulaire d'ajout-->
 					<c:when test="${jour.gif eq null}">
 						<p>${jour.nbPoints} points</p>
 						<a href="gifdistant?date=${jour.date}">Placer un gif distant</a>
 					</c:when>
-<!-- 					Sinon on affiche le gif grace à la balise img -->
 				<c:otherwise><img src ="${jour.gif.url}"></c:otherwise>
 				</c:choose>
 			</td>

@@ -28,5 +28,18 @@ public class JourServiceImpl implements JourService {
 	public List<Jour> recupererJours() {
 		return jours;
 	}
+	
+	/**
+	 * Méthode permettant de récupérer un Jour avec une date
+	 */
+	@Override
+	public Jour recupererJour(LocalDate date) {
+		for (Jour jour : jours) {
+			if (jour.getDate().equals(date)) {
+				return jour;
+			}
+		}
+		return null;
+	}
 
 }

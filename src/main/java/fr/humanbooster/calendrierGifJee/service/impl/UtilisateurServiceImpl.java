@@ -29,6 +29,14 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	public List<Utilisateur> recupererUtilisateurs() {
 		return utilisateurs;
 	}
+	
+	/**
+	 * Méthode permettant de récupérer l'utilisateur connecté
+	 */
+	@Override
+	public Utilisateur recupererUtilisateurConnecte() {
+		return utilisateurConnecte;
+	}
 
 	/**
 	 * Méthode permettant de récupérer un utilisateur par id

@@ -21,4 +21,6 @@ public interface UtilisateurService {
 
 	public void supprimerUtilisateur(Long id);
 
+	Utilisateur recupererUtilisateurConnecte();
+
 }
