@@ -15,6 +15,7 @@
 <h1>Calendrier GIF, page d'accueil :)</h1>
 <!-- Affichage des informations utilisateur -->
 Utilisateur connecté:${sessionScope.utilisateur.nom} ${sessionScope.utilisateur.prenom} Nombre de points: ${sessionScope.utilisateur.nbPoints}
+<a href="deconnexion">Déconnexion</a>
 </header>
 <table>
 	<thead>
@@ -29,7 +30,7 @@ Utilisateur connecté:${sessionScope.utilisateur.nom} ${sessionScope.utilisateur.
 <!-- 		Creation d'une boucle pour chaque jour dans mon tableau jours (cf CalendrierServlet)
 			On renvoie une ligne du tableau pour chaque élément -->
 		<c:forEach items="${jours}" var="jour">
-		<tr colspan="8">
+		<tr>
 			<td>${jour.date}</td>
 			<td colspan="3">
 				<c:choose>
@@ -41,7 +42,7 @@ Utilisateur connecté:${sessionScope.utilisateur.nom} ${sessionScope.utilisateur.
 				</c:choose>
 			</td>
 			<td colspan="3">${jour.gif.utilisateur.prenom} ${jour.gif.utilisateur.nom}</td>
-			<td colspan="3"></td>
+			<td colspan="3"><a href="reaction">Réagir</a></td>
 		</tr>
 		</c:forEach>
 	</tbody>
