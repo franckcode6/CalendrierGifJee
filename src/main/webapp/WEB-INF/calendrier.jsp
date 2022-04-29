@@ -15,7 +15,7 @@
 <h1>Calendrier GIF, page d'accueil :)</h1>
 <!-- Affichage des informations utilisateur -->
 Utilisateur connecté:${sessionScope.utilisateur.nom} ${sessionScope.utilisateur.prenom} Nombre de points: ${sessionScope.utilisateur.nbPoints}
-<a href="deconnexion">Déconnexion</a>
+<a href="index">Déconnexion</a>
 </header>
 <table>
 	<thead>
