@@ -23,7 +23,7 @@
 		<c:forEach items="${emotions}" var="emotion">
 		<option value="${emotion.id}">${emotion.nom} : ${emotion.code}</option>
 		</c:forEach>
-
+		</select><br>
 		<input type="submit" value="Envoyer">
 	</form>
 </body>

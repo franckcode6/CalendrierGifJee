@@ -42,7 +42,7 @@ Utilisateur connecté:${sessionScope.utilisateur.nom} ${sessionScope.utilisateur.
 				</c:choose>
 			</td>
 			<td colspan="3">${jour.gif.utilisateur.prenom} ${jour.gif.utilisateur.nom}</td>
-			<td colspan="3"><a href="reaction?id_gif=${jour.gif.id}">Réagir</a></td>
+			<td colspan="3"><a href="reaction?gif_id=${jour.gif.id}">Réagir</a></td>
 		</tr>
 		</c:forEach>
 	</tbody>
