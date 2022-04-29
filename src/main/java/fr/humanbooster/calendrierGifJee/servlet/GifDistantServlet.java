@@ -47,13 +47,17 @@ public class GifDistantServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = request.getParameter("url");
 		String legende = request.getParameter("legende");
+		//Récupération de la date contenue dans l'URL
 		LocalDate date = LocalDate.parse(request.getParameter("date"));
+		//Creation et ajout d'un gif distant dans le tableau de gifs
 		gifService.ajouterGifDistant(
 				url, 
 				legende, 
 				null, 
 				jourService.recupererJour(date), 
 				utilisateurService.recupererUtilisateurConnecte());
+		//Redirection vers la page calendrier
+		response.sendRedirect("calendrier");
 	}
 
 }
