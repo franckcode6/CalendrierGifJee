@@ -72,7 +72,6 @@ public class InscriptionServlet extends HttpServlet {
 				emailUtilisateur, 
 				mdpUtilisateur,
 				themeService.recupererTheme(Long.parseLong(themeUtilisateur)));
-		System.out.println(utilisateurService.recupererUtilisateurs());
 		
 		//On redirige l'utilisateur après validation du formulaire
 		response.sendRedirect("index");

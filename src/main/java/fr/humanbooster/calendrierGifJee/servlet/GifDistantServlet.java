@@ -47,6 +47,7 @@ public class GifDistantServlet extends HttpServlet {
 		String legende = request.getParameter("legende");
 		//Récupération de la date contenue dans l'URL
 		LocalDate date = LocalDate.parse(request.getParameter("date"));
+		//Récupération de l'utilisateur en session
 		Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("utilisateur");
 		//Creation et ajout d'un gif distant dans le tableau de gifs
 		gifService.ajouterGifDistant(
@@ -55,7 +56,6 @@ public class GifDistantServlet extends HttpServlet {
 				null, 
 				jourService.recupererJour(date), 
 				utilisateur);
-		//System.out.println(gifService.recupererGifs());
 		//Redirection vers la page calendrier
 		response.sendRedirect("calendrier");
 	}
