@@ -12,10 +12,9 @@
 </head>
 <body>
 <header>
-<h1>Calendrier GIF, page d'accueil :)</h1>
+<h1>Calendrier</h1>
 <!-- Affichage des informations utilisateur -->
-Utilisateur connecté:${sessionScope.utilisateur.nom} ${sessionScope.utilisateur.prenom} Nombre de points: ${sessionScope.utilisateur.nbPoints}
-<a href="index">Déconnexion</a>
+<h2>Utilisateur : ${sessionScope.utilisateur.prenom} - solde : ${sessionScope.utilisateur.nbPoints} points <a href="index">Déconnexion</a></h2>
 </header>
 <table>
 	<thead>
@@ -38,11 +37,24 @@ Utilisateur connecté:${sessionScope.utilisateur.nom} ${sessionScope.utilisateur.
 						<p>${jour.nbPoints} points</p>
 						<a href="gifdistant?date=${jour.date}">Placer un gif distant</a>
 					</c:when>
-				<c:otherwise><img src ="${jour.gif.url}"></c:otherwise>
+				<c:otherwise>
+					<h3>${jour.gif.legende}</h3>
+					<img src ="${jour.gif.url}">
+				</c:otherwise>
 				</c:choose>
 			</td>
+			
 			<td colspan="3">${jour.gif.utilisateur.prenom} ${jour.gif.utilisateur.nom}</td>
-			<td colspan="3"><a href="reaction?gif_id=${jour.gif.id}">Réagir</a></td>
+			
+			<td>
+				<ul>
+					<c:forEach items="${jour.gif.reactions}" var="reaction">
+						 <li>${reaction.emotion.code} ${reaction.utilisateur.prenom} ${reaction.utilisateur.nom}</li> 
+					</c:forEach> 
+					<li><a href="reaction?gif_id=${jour.gif.id}">Réagir</a></li>
+				</ul>
+			</td>
+			
 		</tr>
 		</c:forEach>
 	</tbody>

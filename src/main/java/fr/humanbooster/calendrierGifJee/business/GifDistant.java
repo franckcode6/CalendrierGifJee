@@ -12,8 +12,8 @@ public class GifDistant extends Gif {
     public GifDistant() {
     }
     
-	public GifDistant(String url, String legende, List<Reaction> reactions, Jour jour, Utilisateur utilisateur) {
-		super(legende, reactions, jour, utilisateur);
+	public GifDistant(String url, String legende, Jour jour, Utilisateur utilisateur) {
+		super(legende, jour, utilisateur);
 		this.url = url;
 	}
 

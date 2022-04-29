@@ -9,7 +9,7 @@ import fr.humanbooster.calendrierGifJee.business.Utilisateur;
 
 public interface GifService {
 	
-	Gif ajouterGifDistant(String url, String legende, List<Reaction> reactions, Jour jour, Utilisateur utilisateur );
+	Gif ajouterGifDistant(String url, String legende, Jour jour, Utilisateur utilisateur );
 
 	List<Gif> recupererGifs();
 

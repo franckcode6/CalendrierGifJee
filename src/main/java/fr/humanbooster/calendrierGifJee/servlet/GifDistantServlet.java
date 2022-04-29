@@ -53,7 +53,6 @@ public class GifDistantServlet extends HttpServlet {
 		gifService.ajouterGifDistant(
 				url, 
 				legende, 
-				null, 
 				jourService.recupererJour(date), 
 				utilisateur);
 		//Redirection vers la page calendrier

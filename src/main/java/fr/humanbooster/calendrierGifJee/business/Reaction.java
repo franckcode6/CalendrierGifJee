@@ -24,6 +24,7 @@ public class Reaction {
 		this.gif = gif;
 		this.emotion = emotion;
 		this.utilisateur = utilisateur;
+		gif.getReactions().add(this);
 	}
 
 	public Long getId() {

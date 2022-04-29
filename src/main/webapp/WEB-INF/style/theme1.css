@@ -2,10 +2,16 @@
 
 html {
 	font-family: "Arial", sans-serif;
+	background-color: #1f282d;
+	color: white;
+}
+
+a {
+	color : #64a1bd;
 }
 
 h1 {
-	color: blue;
+	color: #ef82a9;
 }
 
 label {
@@ -28,6 +34,10 @@ input[type="submit"] {
 
 select {
 	width: 206px;
+}
+
+td {
+	min-width: 200px; 
 }
 
 .erreur {

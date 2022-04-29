@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 import fr.humanbooster.calendrierGifJee.business.Utilisateur;
 import fr.humanbooster.calendrierGifJee.service.EmotionService;
 import fr.humanbooster.calendrierGifJee.service.GifService;
+import fr.humanbooster.calendrierGifJee.service.ReactionService;
 import fr.humanbooster.calendrierGifJee.service.impl.EmotionServiceImpl;
 import fr.humanbooster.calendrierGifJee.service.impl.GifServiceImpl;
+import fr.humanbooster.calendrierGifJee.service.impl.ReactionServiceImpl;
 
 /**
  * Servlet implementation class ReactionServlet
@@ -21,6 +23,7 @@ public class ReactionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static EmotionService emotionService = new EmotionServiceImpl();
 	private static GifService gifService = new GifServiceImpl();
+	private static ReactionService reactionService = new ReactionServiceImpl();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -72,7 +75,10 @@ public class ReactionServlet extends HttpServlet {
 		Long emotionId = Long.parseLong(request.getParameter("emotion_id"));
 		Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("utilisateur");
 		
-		
+		reactionService.ajouterReaction(gifService.recupererGif(gifId),
+				emotionService.recupererEmotion(emotionId),
+				utilisateur);
+		System.out.println(reactionService.recupererReactions());
 		response.sendRedirect("calendrier");
 	}
 

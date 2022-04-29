@@ -15,9 +15,9 @@ public class GifServiceImpl implements GifService {
 	private static List<Gif> gifs = new ArrayList<>();
 
 	@Override
-	public Gif ajouterGifDistant(String url, String legende, List<Reaction> reactions, Jour jour,
+	public Gif ajouterGifDistant(String url, String legende, Jour jour,
 			Utilisateur utilisateur) {
-		Gif gif = new GifDistant(url, legende, reactions, jour, utilisateur);
+		Gif gif = new GifDistant(url, legende, jour, utilisateur);
 		gifs.add(gif);
 		return gif;
 	}

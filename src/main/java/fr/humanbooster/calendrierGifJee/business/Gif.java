@@ -19,12 +19,12 @@ public abstract class Gif {
     public Gif() {
     	id = ++compteur;
     	dateHeureAjout = LocalDateTime.now();
+    	this.reactions = new ArrayList<>();
     }
 
-	public Gif(String legende, List<Reaction> reactions, Jour jour, Utilisateur utilisateur) {
+	public Gif(String legende, Jour jour, Utilisateur utilisateur) {
 		this();
 		this.legende = legende;
-		this.reactions = reactions;
 		this.jour = jour;
 		this.utilisateur = utilisateur;
 		//On affecte l'objet en cours de cration au jour donné en paramètre
