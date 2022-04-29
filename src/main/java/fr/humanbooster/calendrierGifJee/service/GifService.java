@@ -12,6 +12,4 @@ public interface GifService {
 	Gif ajouterGifDistant(String url, String legende, List<Reaction> reactions, Jour jour, Utilisateur utilisateur );
 
 	List<Gif> recupererGifs();
-
-	Gif recupererGif(Jour jour);
 }

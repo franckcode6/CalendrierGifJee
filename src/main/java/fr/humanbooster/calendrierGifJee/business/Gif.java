@@ -27,6 +27,8 @@ public abstract class Gif {
 		this.reactions = reactions;
 		this.jour = jour;
 		this.utilisateur = utilisateur;
+		//On affecte l'objet en cours de cration au jour donné en paramètre
+		jour.setGif(this);
 	}
 
 	public Long getId() {
@@ -80,7 +82,7 @@ public abstract class Gif {
 	@Override
 	public String toString() {
 		return "Gif [id=" + id + ", dateHeureAjout=" + dateHeureAjout + ", legende=" + legende + ", reactions="
-				+ reactions + ", jour=" + jour + ", utilisateur=" + utilisateur + "]";
+				+ reactions + ", jour=" + jour.getDate() + ", utilisateur=" + utilisateur + "]";
 	}
 	 
 }

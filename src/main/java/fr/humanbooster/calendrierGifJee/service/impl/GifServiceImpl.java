@@ -26,17 +26,5 @@ public class GifServiceImpl implements GifService {
 	public List<Gif> recupererGifs() {
 		return gifs;
 	}
-	
-	@Override
-	public Gif recupererGif(Jour jour) {
-		for (Gif gif : gifs) {
-			if (gif.getJour().equals(jour)) {
-				return gif;
-			}
-		}
-		return null;
-	}
-	
-	
-	
+		
 }

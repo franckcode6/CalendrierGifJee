@@ -56,6 +56,7 @@ public class GifDistantServlet extends HttpServlet {
 				null, 
 				jourService.recupererJour(date), 
 				utilisateurService.recupererUtilisateurConnecte());
+		System.out.println(gifService.recupererGifs());
 		//Redirection vers la page calendrier
 		response.sendRedirect("calendrier");
 	}
