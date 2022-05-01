@@ -78,7 +78,6 @@ public class ReactionServlet extends HttpServlet {
 		reactionService.ajouterReaction(gifService.recupererGif(gifId),
 				emotionService.recupererEmotion(emotionId),
 				utilisateur);
-		System.out.println(reactionService.recupererReactions());
 		response.sendRedirect("calendrier");
 	}
 

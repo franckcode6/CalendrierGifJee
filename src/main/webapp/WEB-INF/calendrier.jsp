@@ -4,12 +4,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style type="text/css">
-  <%@include file="style/theme1.css" %>
-</style>
+<c:choose>
+    <c:when test="${sessionScope.utilisateur.theme.id eq 1}">
+       	<style type="text/css">
+ 			<%@include file="style/bachata.css" %>
+		</style>
+    </c:when>    
+    <c:otherwise>
+       <style type="text/css">
+ 			<%@include file="style/dark.css" %>
+		</style>
+    </c:otherwise>
+</c:choose>
 <meta charset="ISO-8859-1">
 <title>Calendrier Gif</title>
 </head>
+
 <body>
 <header>
 <h1>Calendrier</h1>
@@ -20,9 +30,9 @@
 	<thead>
 		<tr>
 			<th>Jour</th>
-			<th colspan="8">Gif</th>
-			<th colspan="5">Utilisateur</th>
-			<th colspan="5">Reactions</th>
+			<th colspan="5">Gif</th>
+			<th colspan="3">Utilisateur</th>
+			<th colspan="3">Reactions</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -31,7 +41,7 @@
 		<c:forEach items="${jours}" var="jour">
 		<tr>
 			<td>${jour.date}</td>
-			<td colspan="8">
+			<td colspan="5">
 				<c:choose>
 					<c:when test="${jour.gif eq null}">
 						<p>${jour.nbPoints} points</p>
@@ -44,9 +54,9 @@
 				</c:choose>
 			</td>
 			
-			<td colspan="5">${jour.gif.utilisateur.prenom} ${jour.gif.utilisateur.nom}</td>
+			<td colspan="3">${jour.gif.utilisateur.prenom} ${jour.gif.utilisateur.nom}</td>
 			
-			<td colspan="5">
+			<td colspan="3">
 				<ul>
 					<c:forEach items="${jour.gif.reactions}" var="reaction">
 						 <li>${reaction.emotion.code} ${reaction.utilisateur.prenom} ${reaction.utilisateur.nom}</li> 

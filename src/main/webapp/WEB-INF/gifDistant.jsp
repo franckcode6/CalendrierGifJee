@@ -1,13 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Placer un gif distant sur le </title>
-<style type="text/css">
-  <%@include file="style/theme1.css" %>
-</style>
+<c:choose>
+    <c:when test="${sessionScope.utilisateur.theme.id eq 1}">
+       	<style type="text/css">
+ 			<%@include file="style/bachata.css" %>
+		</style>
+    </c:when>    
+    <c:otherwise>
+       <style type="text/css">
+ 			<%@include file="style/dark.css" %>
+		</style>
+    </c:otherwise>
+</c:choose>
 </head>
 
 <body>
