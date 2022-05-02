@@ -71,7 +71,7 @@
 			<td colspan="3">${jour.gif.utilisateur.prenom} ${jour.gif.utilisateur.nom}</td>
 			
 			<td colspan="3">
-			<c:if test="${jour.gif ne null}">
+			<c:if test="${jour.gif.id ne null}">
 				<ul>
 					<c:forEach items="${jour.gif.reactions}" var="reaction">
 						 <li>${reaction.emotion.code} ${reaction.utilisateur.prenom} ${reaction.utilisateur.nom}</li> 

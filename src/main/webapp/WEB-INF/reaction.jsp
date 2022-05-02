@@ -22,7 +22,12 @@
 
 <body>
 	<h1>Ajouter une réaction</h1>
-	<img src ="${gif.url}">
+	<c:if test="${gif.getClass().simpleName eq 'GifDistant'}">
+		<img src="${gif.url}" height="200" alt="Super image du calendrier !">
+	</c:if>
+	<c:if test="${gif.getClass().simpleName eq 'GifTeleverse'}">
+		<img src="img/${gif.id}.gif" height="200" alt="${gif.nomFichierOriginal}" title="${gif.nomFichierOriginal}">
+	</c:if>
 	<form
 		action=""
 		method="post">

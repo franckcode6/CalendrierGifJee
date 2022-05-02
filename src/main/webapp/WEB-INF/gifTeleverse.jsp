@@ -29,6 +29,9 @@
 		enctype="multipart/form-data">
 		<input type="file" name="fichier" accept="image/gif" placeholder="URL">
 		<br>
+		
+		<input type="text" name="legende" placeholder="Légende">
+		<br>
 
 		<input type="submit" value="Envoyer">
 	</form>
