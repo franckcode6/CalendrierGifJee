@@ -14,4 +14,6 @@ public interface GifService {
 	List<Gif> recupererGifs();
 
 	Gif recupererGif(Long id);
+
+	Gif ajouterGifTeleverse(String nomFichierOriginal, String legende, Jour jour, Utilisateur utilisateur);
 }

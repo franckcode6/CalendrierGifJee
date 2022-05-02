@@ -45,11 +45,18 @@
 				<c:choose>
 					<c:when test="${jour.gif eq null}">
 						<p>${jour.nbPoints} points</p>
-						<a href="gifdistant?date=${jour.date}">Placer un gif distant</a>
+						<ul>
+							<li>
+							<a href="gifdistant?date=${jour.date}">Placer un gif distant</a>
+							</li>
+							<li>
+							<a href="gifteleverse?date=${jour.date}">Placer un gif téléversé</a>
+							</li>
+							</ul>
 					</c:when>
 				<c:otherwise>
 					<h3>${jour.gif.legende}</h3>
-					<img src ="${jour.gif.url}">
+					<img src ="img/${jour.gif.id}.gif">
 				</c:otherwise>
 				</c:choose>
 			</td>
@@ -64,7 +71,6 @@
 					<li><a href="reaction?gif_id=${jour.gif.id}">Réagir</a></li>
 				</ul>
 			</td>
-			
 		</tr>
 		</c:forEach>
 	</tbody>

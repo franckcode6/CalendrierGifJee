@@ -2,7 +2,7 @@ package fr.humanbooster.calendrierGifJee.business;
 
 public class GifTeleverse extends Gif {
 
-	private String nomFichierOriginal;
+	protected String nomFichierOriginal;
 	
     /**
      * Default constructor
@@ -10,8 +10,8 @@ public class GifTeleverse extends Gif {
     public GifTeleverse() {
     }
 
-	public GifTeleverse(String nomFichierOriginal) {
-		super();
+	public GifTeleverse(String nomFichierOriginal, String legende, Jour jour, Utilisateur utilisateur) {
+		super(legende, jour, utilisateur);
 		this.nomFichierOriginal = nomFichierOriginal;
 	}
 
@@ -25,7 +25,7 @@ public class GifTeleverse extends Gif {
 
 	@Override
 	public String toString() {
-		return "GifTeleverse [nomFichierOriginal=" + nomFichierOriginal + "]";
+		return "GifTeleverse [nom=" + nomFichierOriginal + ", getLegende()=" + getLegende() + ", getReaction()=" + getReactions() + ", getJour()=" + getJour().getDate() + "]";
 	}
     
 }
