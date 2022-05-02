@@ -18,7 +18,7 @@ import fr.humanbooster.calendrierGifJee.service.impl.JourServiceImpl;
 /**
  * Servlet implementation class GifDistantServlet
  */
-@WebServlet("/gifdistant")
+@WebServlet("/calendrier/gifdistant")
 public class GifDistantServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static GifService gifService = new GifServiceImpl();
@@ -36,7 +36,7 @@ public class GifDistantServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/gifDistant.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/gifDistant.jsp").forward(request, response);
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class GifDistantServlet extends HttpServlet {
 				jourService.recupererJour(date), 
 				utilisateur);
 		//Redirection vers la page calendrier
-		response.sendRedirect("calendrier");
+		response.sendRedirect(request.getContextPath() + "/calendrier");
 	}
 
 }

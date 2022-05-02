@@ -1,7 +1,6 @@
 package fr.humanbooster.calendrierGifJee.filter;
 
 import java.io.IOException;
-import java.util.Date;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;

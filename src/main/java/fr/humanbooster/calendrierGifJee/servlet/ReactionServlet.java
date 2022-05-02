@@ -18,7 +18,7 @@ import fr.humanbooster.calendrierGifJee.service.impl.ReactionServiceImpl;
 /**
  * Servlet implementation class ReactionServlet
  */
-@WebServlet("/reaction")
+@WebServlet("/calendrier/reaction")
 public class ReactionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static EmotionService emotionService = new EmotionServiceImpl();
@@ -62,7 +62,7 @@ public class ReactionServlet extends HttpServlet {
 		request.setAttribute("gif", gifService.recupererGif(id));
 		// Recuperation des emotions contenue dans le tableau emotions
 		request.setAttribute("emotions", emotionService.recupererEmotions());
-		request.getRequestDispatcher("WEB-INF/reaction.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/reaction.jsp").forward(request, response);
 	}
 
 	/**
@@ -78,7 +78,7 @@ public class ReactionServlet extends HttpServlet {
 		reactionService.ajouterReaction(gifService.recupererGif(gifId),
 				emotionService.recupererEmotion(emotionId),
 				utilisateur);
-		response.sendRedirect("calendrier");
+		response.sendRedirect(request.getContextPath() + "/calendrier");
 	}
 
 }

@@ -47,10 +47,10 @@
 						<p>${jour.nbPoints} points</p>
 						<ul>
 							<li>
-							<a href="gifdistant?date=${jour.date}">Placer un gif distant</a>
+							<a href="calendrier/gifdistant?date=${jour.date}">Placer un gif distant</a>
 							</li>
 							<li>
-							<a href="gifteleverse?date=${jour.date}">Placer un gif téléversé</a>
+							<a href="calendrier/gifteleverse?date=${jour.date}">Placer un gif téléversé</a>
 							</li>
 							</ul>
 					</c:when>
@@ -59,7 +59,7 @@
 					<h2>${jour.gif.legende}</h2>
 					</c:if>
 					<c:if test="${jour.gif.getClass().simpleName eq 'GifDistant'}">
-					<img src="${jour.gif.url}" height="200" alt="Super image du calendrier !">
+					<img src="${jour.gif.url}">
 					</c:if>
 					<c:if test="${jour.gif.getClass().simpleName eq 'GifTeleverse'}">
 					<img src="img/${jour.gif.id}.gif" height="200" alt="${jour.gif.nomFichierOriginal}" title="${jour.gif.nomFichierOriginal}">
@@ -76,7 +76,7 @@
 					<c:forEach items="${jour.gif.reactions}" var="reaction">
 						 <li>${reaction.emotion.code} ${reaction.utilisateur.prenom} ${reaction.utilisateur.nom}</li> 
 					</c:forEach> 
-					<li><a href="reaction?gif_id=${jour.gif.id}">Réagir</a></li>
+					<li><a href="calendrier/reaction?gif_id=${jour.gif.id}">Réagir</a></li>
 				</ul>
 				</c:if>
 			</td>

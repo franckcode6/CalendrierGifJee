@@ -23,7 +23,7 @@ import fr.humanbooster.calendrierGifJee.service.impl.JourServiceImpl;
 /**
  * Servlet implementation class GifTeleverseServlet
  */
-@WebServlet("/gifteleverse")
+@WebServlet("/calendrier/gifteleverse")
 @MultipartConfig()
 public class GifTeleverseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -43,7 +43,7 @@ public class GifTeleverseServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/gifTeleverse.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/gifTeleverse.jsp").forward(request, response);
 	}
 
 	/**
