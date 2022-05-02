@@ -24,7 +24,7 @@
 <header>
 <h1>Calendrier</h1>
 <!-- Affichage des informations utilisateur -->
-<h2>Utilisateur : ${sessionScope.utilisateur.prenom} - solde : ${sessionScope.utilisateur.nbPoints} points <a href="index">Déconnexion</a></h2>
+<h2>Utilisateur : ${sessionScope.utilisateur.prenom} - solde : ${sessionScope.utilisateur.nbPoints} points <a href="deconnexion">Déconnexion</a></h2>
 </header>
 <table>
 	<thead>
