@@ -55,10 +55,15 @@
 							</ul>
 					</c:when>
 				<c:otherwise>
-					<c:if test="${jour.gif.legende ne null && jour.gif.legende ne ''}"><h2>${jour.gif.legende}</h2></c:if>
-					<c:if test="${jour.gif.getClass().simpleName eq 'GifDistant'}"><img src="${jour.gif.url}" height="200" alt="Super image du calendrier !"></c:if>
-					<c:if test="${jour.gif.getClass().simpleName eq 'GifTeleverse'}"><img src="img/${jour.gif.id}.gif" height="200" alt="${jour.gif.nomFichierOriginal}" title="${jour.gif.nomFichierOriginal}"></c:if>
-					
+					<c:if test="${jour.gif.legende ne null && jour.gif.legende ne ''}">
+					<h2>${jour.gif.legende}</h2>
+					</c:if>
+					<c:if test="${jour.gif.getClass().simpleName eq 'GifDistant'}">
+					<img src="${jour.gif.url}" height="200" alt="Super image du calendrier !">
+					</c:if>
+					<c:if test="${jour.gif.getClass().simpleName eq 'GifTeleverse'}">
+					<img src="img/${jour.gif.id}.gif" height="200" alt="${jour.gif.nomFichierOriginal}" title="${jour.gif.nomFichierOriginal}">
+					</c:if>
 				</c:otherwise>
 				</c:choose>
 			</td>
@@ -66,12 +71,14 @@
 			<td colspan="3">${jour.gif.utilisateur.prenom} ${jour.gif.utilisateur.nom}</td>
 			
 			<td colspan="3">
+			<c:if test="${jour.gif ne null}">
 				<ul>
 					<c:forEach items="${jour.gif.reactions}" var="reaction">
 						 <li>${reaction.emotion.code} ${reaction.utilisateur.prenom} ${reaction.utilisateur.nom}</li> 
 					</c:forEach> 
 					<li><a href="reaction?gif_id=${jour.gif.id}">Réagir</a></li>
 				</ul>
+				</c:if>
 			</td>
 		</tr>
 		</c:forEach>
