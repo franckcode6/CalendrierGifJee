@@ -55,8 +55,10 @@
 							</ul>
 					</c:when>
 				<c:otherwise>
-					<h3>${jour.gif.legende}</h3>
-					<img src ="img/${jour.gif.id}.gif">
+					<c:if test="${jour.gif.legende ne null && jour.gif.legende ne ''}"><h2>${jour.gif.legende}</h2></c:if>
+					<c:if test="${jour.gif.getClass().simpleName eq 'GifDistant'}"><img src="${jour.gif.url}" height="200" alt="Super image du calendrier !"></c:if>
+					<c:if test="${jour.gif.getClass().simpleName eq 'GifTeleverse'}"><img src="img/${jour.gif.id}.gif" height="200" alt="${jour.gif.nomFichierOriginal}" title="${jour.gif.nomFichierOriginal}"></c:if>
+					
 				</c:otherwise>
 				</c:choose>
 			</td>
