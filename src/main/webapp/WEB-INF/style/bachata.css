@@ -1,7 +1,7 @@
 @charset "ISO-8859-1";
 
 body {
-	font-family: "Courier";	
+	font-family: "Courier";
 }
 
 a {
@@ -40,9 +40,20 @@ select {
 }
 
 #calendrier {
-	width: 70%;	
+	width: 70%;
 }
 
 .erreur {
 	color: red;
+}
+
+.button {
+	background-color: lightblue;
+	border-radius: 20px;
+	padding: 10px 20px;
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-weight: bold;
+	margin-top: 10px;
 }

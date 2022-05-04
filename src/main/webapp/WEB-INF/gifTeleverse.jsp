@@ -7,33 +7,26 @@
 <meta charset="ISO-8859-1">
 <title>Placer un gif televerse</title>
 <c:choose>
-    <c:when test="${sessionScope.utilisateur.theme.id eq 1}">
-       	<style type="text/css">
- 			<%@include file="style/bachata.css" %>
-		</style>
-    </c:when>    
-    <c:otherwise>
-       <style type="text/css">
- 			<%@include file="style/dark.css" %>
-		</style>
-    </c:otherwise>
+	<c:when test="${sessionScope.utilisateur.theme.id eq 1}">
+		<style type="text/css">
+<%@include file="style/bachata.css"%>
+</style>
+	</c:when>
+	<c:otherwise>
+		<style type="text/css">
+<%@include file="style/dark.css"%>
+</style>
+	</c:otherwise>
 </c:choose>
 </head>
 
 <body>
-	<h1>Téléverser un gif</h1>
+	<h1>Téléverser un nouveau gif</h1>
 
-	<form
-		action=""
-		method="post"
-		enctype="multipart/form-data">
+	<form action="" method="post" enctype="multipart/form-data">
 		<input type="file" name="fichier" accept="image/gif" placeholder="URL">
-		<br>
-		
-		<input type="text" name="legende" placeholder="Légende">
-		<br>
-
-		<input type="submit" value="Envoyer">
+		<br> <input type="text" name="legende" placeholder="Légende">
+		<br> <input type="submit" class="button" value="Envoyer">
 	</form>
 </body>
 </html>
