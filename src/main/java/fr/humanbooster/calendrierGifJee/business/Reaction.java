@@ -11,12 +11,9 @@ public class Reaction {
 	private Emotion emotion;
 	private Utilisateur utilisateur;
 
-	/**
-	 * Default constructor
-	 */
 	public Reaction() {
 		id = ++compteur;
-		dateHeure = LocalDateTime.now(); 
+		dateHeure = LocalDateTime.now();
 	}
 
 	public Reaction(Gif gif, Emotion emotion, Utilisateur utilisateur) {
@@ -72,6 +69,5 @@ public class Reaction {
 		return "Reaction [id=" + id + ", dateHeure=" + dateHeure + ", gif=" + gif + ", emotion=" + emotion
 				+ ", utilisateur=" + utilisateur + "]";
 	}
-	
-	
+
 }

@@ -10,9 +10,9 @@ import fr.humanbooster.calendrierGifJee.business.Utilisateur;
 import fr.humanbooster.calendrierGifJee.service.ReactionService;
 
 public class ReactionServiceImpl implements ReactionService {
-	
+
 	private static List<Reaction> reactions = new ArrayList<>();
-	
+
 	/**
 	 * Méthode permettant d'ajouter une reaction à la liste de reactions
 	 */

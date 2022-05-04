@@ -5,30 +5,27 @@ import java.util.*;
 
 public class Utilisateur {
 
-    private final static int NB_POINTS_INITIAL = 500;
+	private final static int NB_POINTS_INITIAL = 500;
 
-    private Long id;
-    private static Long compteur = 0L;
-    private String nom;
-    private String prenom;
-    private String email;
-    private String motDePasse;
-    private int nbPoints;
-    private LocalDateTime dateHeureInscription;
-    private Theme theme;
-    private ArrayList<Gif> gifs;
-    
-    /**
-     * Default constructor
-     */
-    public Utilisateur() {
-    	id = ++compteur;
-    	this.nbPoints = NB_POINTS_INITIAL;
-    	dateHeureInscription = LocalDateTime.now();
-    	this.gifs = new ArrayList<Gif>();
-    }
-    
-    public Utilisateur(String nom, String prenom, String email, String motDePasse, Theme theme) {
+	private Long id;
+	private static Long compteur = 0L;
+	private String nom;
+	private String prenom;
+	private String email;
+	private String motDePasse;
+	private int nbPoints;
+	private LocalDateTime dateHeureInscription;
+	private Theme theme;
+	private ArrayList<Gif> gifs;
+
+	public Utilisateur() {
+		id = ++compteur;
+		this.nbPoints = NB_POINTS_INITIAL;
+		dateHeureInscription = LocalDateTime.now();
+		this.gifs = new ArrayList<Gif>();
+	}
+
+	public Utilisateur(String nom, String prenom, String email, String motDePasse, Theme theme) {
 		this();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -125,5 +122,5 @@ public class Utilisateur {
 				+ motDePasse + ", nbPoints=" + nbPoints + ", dateHeureInscription=" + dateHeureInscription + ", theme="
 				+ theme + ", gifs=" + gifs + "]";
 	}
-    
+
 }

@@ -5,29 +5,26 @@ import java.util.*;
 
 public abstract class Gif {
 
-    protected Long id;
-    private static Long compteur = 0L;
-    protected LocalDateTime dateHeureAjout;
-    protected String legende;
-    private List<Reaction> reactions;
-    protected Jour jour;
-    private Utilisateur utilisateur;
-    
-    /**
-     * Default constructor
-     */
-    public Gif() {
-    	id = ++compteur;
-    	dateHeureAjout = LocalDateTime.now();
-    	this.reactions = new ArrayList<>();
-    }
+	protected Long id;
+	private static Long compteur = 0L;
+	protected LocalDateTime dateHeureAjout;
+	protected String legende;
+	private List<Reaction> reactions;
+	protected Jour jour;
+	private Utilisateur utilisateur;
+
+	public Gif() {
+		id = ++compteur;
+		dateHeureAjout = LocalDateTime.now();
+		this.reactions = new ArrayList<>();
+	}
 
 	public Gif(String legende, Jour jour, Utilisateur utilisateur) {
 		this();
 		this.legende = legende;
 		this.jour = jour;
 		this.utilisateur = utilisateur;
-		//On affecte l'objet en cours de cration au jour donné en paramètre
+		// On affecte l'objet en cours de cration au jour donné en paramètre
 		jour.setGif(this);
 		utilisateur.getGifs().add(this);
 	}
@@ -63,7 +60,7 @@ public abstract class Gif {
 	public void setReactions(List<Reaction> reactions) {
 		this.reactions = reactions;
 	}
-	
+
 	public String getLegende() {
 		return legende;
 	}
@@ -85,5 +82,5 @@ public abstract class Gif {
 		return "Gif [id=" + id + ", dateHeureAjout=" + dateHeureAjout + ", legende=" + legende + ", reactions="
 				+ reactions + ", jour=" + jour.getDate() + ", utilisateur=" + utilisateur + "]";
 	}
-	 
+
 }

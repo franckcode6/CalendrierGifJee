@@ -23,5 +23,4 @@ public interface EmotionService {
 
 	Emotion recupererEmotion(String nom);
 
-	void supprimerEmotion(Long id);
 }

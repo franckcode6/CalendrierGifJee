@@ -7,10 +7,10 @@ import fr.humanbooster.calendrierGifJee.business.Jour;
 
 public interface JourService {
 
-	public Jour ajouterJour(LocalDate jour);
+	Jour ajouterJour(LocalDate jour);
 
-	public List<Jour> recupererJours();
+	List<Jour> recupererJours();
 
-	public Jour recupererJour(LocalDate date);
+	Jour recupererJour(LocalDate date);
 
 }

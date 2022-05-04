@@ -54,7 +54,7 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Méthode permettant de récupérer un utilisateur par nom
 	 */
@@ -81,16 +81,6 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 		return false;
 	}
 
-	/**
-	 * Méthode permettant de supprimer un utilisateur par son id
-	 */
-	public void supprimerUtilisateur(Long id) {
-		for (Utilisateur utilisateur : utilisateurs) {
-			if (utilisateur.getId().equals(id)) {
-				utilisateurs.remove(utilisateur);
-			}
-		}
-
-	}
+	
 
 }

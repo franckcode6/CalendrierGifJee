@@ -15,15 +15,16 @@ public class CheckSessionFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-	
+
 		HttpServletRequest request = (HttpServletRequest) req;
-		
-		if (request.getRequestURI().startsWith(request.getContextPath() + "/calendrier") &&
-				request.getSession().getAttribute("utilisateur")==null) {
+
+		//Si l'URI commence par /calendrier et qu'il n'y pas d'utilisateur connecté
+		//On le redirige sur la page /index
+		if (request.getRequestURI().startsWith(request.getContextPath() + "/calendrier")
+				&& request.getSession().getAttribute("utilisateur") == null) {
 			System.out.println("Pas de session");
-			((HttpServletResponse) response).sendRedirect( request.getContextPath() + "/index");
-		}
-		else {
+			((HttpServletResponse) response).sendRedirect(request.getContextPath() + "/index");
+		} else {
 			chain.doFilter(request, response);
 		}
 	}

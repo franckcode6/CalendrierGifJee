@@ -54,16 +54,4 @@ public class ThemeServiceImpl implements ThemeService {
 		return null;
 	}
 
-	/**
-	 * Méthode permettant de supprimer un élément par son id
-	 */
-	public void supprimerTheme(Long id) {
-		for (Theme theme : themes) {
-			if (theme.getId().equals(id)) {
-				themes.remove(theme);
-			}
-		}
-
-	}
-
 }

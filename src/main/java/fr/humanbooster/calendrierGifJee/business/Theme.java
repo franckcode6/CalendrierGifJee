@@ -2,16 +2,13 @@ package fr.humanbooster.calendrierGifJee.business;
 
 public class Theme {
 
-    private Long id;
-    private static Long compteur = 0L;
-    private String nom;
-    
-    /**
-     * Default constructor
-     */
-    public Theme() {
-    	id = ++compteur;
-    }
+	private Long id;
+	private static Long compteur = 0L;
+	private String nom;
+
+	public Theme() {
+		id = ++compteur;
+	}
 
 	public Theme(String nom) {
 		this();
@@ -38,5 +35,5 @@ public class Theme {
 	public String toString() {
 		return "Theme [id=" + id + ", nom=" + nom + "]";
 	}
-    
+
 }

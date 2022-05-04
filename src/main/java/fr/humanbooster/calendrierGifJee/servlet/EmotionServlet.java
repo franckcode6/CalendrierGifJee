@@ -25,7 +25,6 @@ public class EmotionServlet extends HttpServlet {
 	 */
 	public EmotionServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -35,7 +34,7 @@ public class EmotionServlet extends HttpServlet {
 	public void init() throws ServletException {
 		super.init();
 		System.out.println("Init!");
-		//Ajout des émotions
+		// Ajout des émotions
 		if (emotionService.recupererEmotions().isEmpty()) {
 			emotionService.ajouterEmotion("Souriant", "&#x1F600;");
 			emotionService.ajouterEmotion("Monocle", "&#x1F9D0;");
@@ -69,7 +68,6 @@ public class EmotionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

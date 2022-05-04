@@ -30,24 +30,26 @@ public class GifTeleverseServlet extends HttpServlet {
 	private String separateur = System.getProperty("file.separator");
 	private static GifService gifService = new GifServiceImpl();
 	private static JourService jourService = new JourServiceImpl();
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public GifTeleverseServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public GifTeleverseServlet() {
+		super();
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/gifTeleverse.jsp").forward(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -65,8 +67,6 @@ public class GifTeleverseServlet extends HttpServlet {
 						+ gifTeleverse.getId() + ".gif";
 				System.out.println(chemin);
 				((GifTeleverse) gifTeleverse).setNomFichierOriginal(part.getSubmittedFileName());
-				System.out.println(gifService.recupererGifs());
-				System.out.println(gifTeleverse);
 				part.write(chemin);
 			}
 		}

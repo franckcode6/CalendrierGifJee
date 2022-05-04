@@ -7,18 +7,16 @@ import fr.humanbooster.calendrierGifJee.business.Utilisateur;
 
 public interface UtilisateurService {
 
-	public Utilisateur ajouterUtilisateur(String nom, String prenom, String email, String motDePasse, Theme theme);
+	Utilisateur ajouterUtilisateur(String nom, String prenom, String email, String motDePasse, Theme theme);
 
-	public List<Utilisateur> recupererUtilisateurs();
+	List<Utilisateur> recupererUtilisateurs();
 
-	public Utilisateur recupererUtilisateur(Long id);
+	Utilisateur recupererUtilisateur(Long id);
 
-	public Utilisateur recupererUtilisateur(String nom);
-	
-	public Utilisateur recupererUtilisateur(String email, String motDePasse);
+	Utilisateur recupererUtilisateur(String nom);
 
-	public boolean authentifierUtilisateur(String email, String motDePasse);
+	Utilisateur recupererUtilisateur(String email, String motDePasse);
 
-	public void supprimerUtilisateur(Long id);
+	boolean authentifierUtilisateur(String email, String motDePasse);
 
 }

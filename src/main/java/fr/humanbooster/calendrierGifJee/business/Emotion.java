@@ -2,17 +2,14 @@ package fr.humanbooster.calendrierGifJee.business;
 
 public class Emotion {
 
-    private Long id;
-    private static Long compteur = 0L;
-    private String nom;
-    private String code;
-    
-    /**
-     * Default constructor
-     */
-    public Emotion() {
-    	id = ++compteur;
-    }
+	private Long id;
+	private static Long compteur = 0L;
+	private String nom;
+	private String code;
+
+	public Emotion() {
+		id = ++compteur;
+	}
 
 	public Emotion(String nom, String code) {
 		this();
@@ -47,6 +44,6 @@ public class Emotion {
 	@Override
 	public String toString() {
 		return "Emotion [id=" + id + ", nom=" + nom + ", code=" + code + "]";
-	}   
-    
+	}
+
 }

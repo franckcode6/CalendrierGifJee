@@ -30,7 +30,6 @@ public class ReactionServlet extends HttpServlet {
 	 */
 	public ReactionServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -74,9 +73,8 @@ public class ReactionServlet extends HttpServlet {
 		Long gifId = Long.parseLong(request.getParameter("gif_id"));
 		Long emotionId = Long.parseLong(request.getParameter("emotion_id"));
 		Utilisateur utilisateur = (Utilisateur) request.getSession().getAttribute("utilisateur");
-		
-		reactionService.ajouterReaction(gifService.recupererGif(gifId),
-				emotionService.recupererEmotion(emotionId),
+
+		reactionService.ajouterReaction(gifService.recupererGif(gifId), emotionService.recupererEmotion(emotionId),
 				utilisateur);
 		response.sendRedirect(request.getContextPath() + "/calendrier");
 	}

@@ -26,14 +26,13 @@ public class InscriptionServlet extends HttpServlet {
 	 */
 	public InscriptionServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void init() throws ServletException {
 		super.init();
 		System.out.println("Init!");
-		//Création d'une utilisatrice par défaut
+		// Création d'une utilisatrice par défaut
 		if (utilisateurService.recupererUtilisateurs().isEmpty()) {
 			utilisateurService.ajouterUtilisateur("Ito", "Delphine", "d@hb.com", "123",
 					themeService.recupererTheme("Bachata"));
@@ -57,23 +56,19 @@ public class InscriptionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//On stock la saisie de l'utilisateur du formulaire inscription.jsp
+		// On stock la saisie de l'utilisateur du formulaire inscription.jsp
 		String nomUtilisateur = request.getParameter("nom");
 		String prenomUtilisateur = request.getParameter("prenom");
 		String emailUtilisateur = request.getParameter("email");
 		String mdpUtilisateur = request.getParameter("mot_de_passe");
 		String themeUtilisateur = request.getParameter("theme_id");
-		
-		//On appelle la méthode ajouterUtilisateur() de utilisateurService
-		//On passe en paramètres de cette méthode les variables précédemment créées
-		utilisateurService.ajouterUtilisateur(
-				nomUtilisateur, 
-				prenomUtilisateur, 
-				emailUtilisateur, 
-				mdpUtilisateur,
+
+		// On appelle la méthode ajouterUtilisateur() de utilisateurService
+		// On passe en paramètres de cette méthode les variables précédemment créées
+		utilisateurService.ajouterUtilisateur(nomUtilisateur, prenomUtilisateur, emailUtilisateur, mdpUtilisateur,
 				themeService.recupererTheme(Long.parseLong(themeUtilisateur)));
-		
-		//On redirige l'utilisateur après validation du formulaire
+
+		// On redirige l'utilisateur après validation du formulaire
 		response.sendRedirect("index");
 	}
 

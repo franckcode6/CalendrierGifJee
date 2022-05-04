@@ -5,26 +5,23 @@ import java.util.Random;
 
 public class Jour {
 
-    private LocalDate date;
-    private int nbPoints;
-    private Gif gif;
-    private static Random random = new Random();
-    
-    /**
-     * Default constructor
-     */
-    public Jour() {
-    	date = LocalDate.now();
-    	nbPoints = 20 + random.nextInt(31);
-    }
-    
-    public Jour(LocalDate date) {
-    	this();
-    	this.date = date;
-    }
-    
-    public Jour(int nbPoints, Gif gif) {
-    	this();
+	private LocalDate date;
+	private int nbPoints;
+	private Gif gif;
+	private static Random random = new Random();
+
+	public Jour() {
+		date = LocalDate.now();
+		nbPoints = 20 + random.nextInt(31);
+	}
+
+	public Jour(LocalDate date) {
+		this();
+		this.date = date;
+	}
+
+	public Jour(int nbPoints, Gif gif) {
+		this();
 		this.nbPoints = nbPoints;
 		this.gif = gif;
 	}
@@ -57,5 +54,5 @@ public class Jour {
 	public String toString() {
 		return "Jour [date=" + date + ", nbPoints=" + nbPoints + ", gif=" + gif + "]";
 	}
-    
+
 }

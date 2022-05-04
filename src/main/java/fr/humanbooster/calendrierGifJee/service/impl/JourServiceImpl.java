@@ -28,7 +28,7 @@ public class JourServiceImpl implements JourService {
 	public List<Jour> recupererJours() {
 		return jours;
 	}
-	
+
 	/**
 	 * Méthode permettant de récupérer un Jour avec une date
 	 */

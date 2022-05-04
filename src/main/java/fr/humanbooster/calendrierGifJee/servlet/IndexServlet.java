@@ -24,7 +24,6 @@ public class IndexServlet extends HttpServlet {
 	 */
 	public IndexServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -44,19 +43,18 @@ public class IndexServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String emailUtilisateur = request.getParameter("email");
-		// System.out.println(emailUtilisateur);
 		String mdpUtilisateur = request.getParameter("mot_de_passe");
-		// System.out.println(mdpUtilisateur);
 
 		if (utilisateurService.authentifierUtilisateur(emailUtilisateur, mdpUtilisateur)) {
-			//Si la connexion est bonne, on créé un objet Utilisateur grace au mail et au mdp indiqués dans le formulaire
+			// Si la connexion est bonne, on créé un objet Utilisateur grace au mail et au
+			// mdp indiqués dans le formulaire
 			Utilisateur utilisateur = utilisateurService.recupererUtilisateur(emailUtilisateur, mdpUtilisateur);
-			//On stock cet utilisateur dans la session
+			// On stock cet utilisateur dans la session
 			request.getSession().setAttribute("utilisateur", utilisateur);
-			//On redirige vers CalendrierServlet
+			// On redirige vers CalendrierServlet
 			response.sendRedirect("calendrier");
 		} else {
-			//Si Email ou Mdp incorrects, on recharge la page pour nouvelle saisie
+			// Si Email ou Mdp incorrects, on recharge la page pour nouvelle saisie
 			response.sendRedirect("index");
 		}
 
