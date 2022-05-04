@@ -35,7 +35,7 @@ public class InscriptionServlet extends HttpServlet {
 		// Création d'une utilisatrice par défaut
 		if (utilisateurService.recupererUtilisateurs().isEmpty()) {
 			utilisateurService.ajouterUtilisateur("Ito", "Delphine", "d@hb.com", "123",
-					themeService.recupererTheme("Bachata"));
+					themeService.recupererTheme("Dark"));
 		}
 	}
 

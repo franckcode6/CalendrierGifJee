@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Calendrier Gif</title>
 <style type="text/css">
-<%@include file="style/bachata.css"%>
+<%@include file="style/dark.css"%>
 </style>
 </head>
 

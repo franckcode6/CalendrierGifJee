@@ -4,6 +4,8 @@ body {
 	background-color: #1f282d;
 	color: white;
 	font-family: "Arial";
+	width: 1200px;
+	margin: auto;
 }
 
 a {
@@ -41,6 +43,13 @@ select {
 	font-family: "Arial";
 }
 
+table {
+	border: 20px solid lightblue;
+	border-radius: 20px;
+	padding: 50px;
+	margin: auto;
+}
+
 #calendrier {
 	width: 70%;
 }
@@ -50,7 +59,7 @@ select {
 }
 
 .button {
-	background-color: lightblue;
+	background-color: red;
 	border-radius: 20px;
 	padding: 10px 20px;
 	color: white;

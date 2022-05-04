@@ -9,7 +9,7 @@
 <c:choose>
 	<c:when test="${sessionScope.utilisateur.theme.id eq 1}">
 		<style type="text/css">
-<%@include file="style/bachata.css"%>
+<%@include file="style/darksalmon.css"%>
 </style>
 	</c:when>
 	<c:otherwise>

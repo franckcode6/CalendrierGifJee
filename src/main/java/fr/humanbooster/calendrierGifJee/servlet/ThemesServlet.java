@@ -35,7 +35,7 @@ public class ThemesServlet extends HttpServlet {
 		super.init();
 		System.out.println("Init!");
 		if (themeService.recupererThemes().isEmpty()) {
-			themeService.ajouterTheme("Bachata");
+			themeService.ajouterTheme("Salmon");
 			themeService.ajouterTheme("Dark");
 		}
 	}

@@ -7,7 +7,7 @@
 <c:choose>
 	<c:when test="${sessionScope.utilisateur.theme.id eq 1}">
 		<style type="text/css">
-<%@include file="style/bachata.css"%>
+<%@include file="style/darksalmon.css"%>
 </style>
 	</c:when>
 	<c:otherwise>
@@ -22,7 +22,7 @@
 
 <body>
 	<header>
-		<h1>Calendrier</h1>
+		<h1>Calendrier Gif</h1>
 		<!-- Affichage des informations utilisateur -->
 		<h2>
 			Utilisateur : ${sessionScope.utilisateur.prenom} - solde :
@@ -42,7 +42,7 @@
 			<!-- Creation d'une boucle pour chaque jour dans mon tableau jours (cf CalendrierServlet)
 			On renvoie une ligne du tableau pour chaque élément -->
 			<c:forEach items="${jours}" var="jour">
-				<tr>
+				<tr class="tableRow">
 					<td>${jour.date}</td>
 					<td colspan="5"><c:choose>
 							<c:when test="${jour.gif eq null}">
