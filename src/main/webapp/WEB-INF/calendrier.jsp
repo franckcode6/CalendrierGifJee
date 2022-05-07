@@ -43,7 +43,7 @@
 			On renvoie une ligne du tableau pour chaque élément -->
 			<c:forEach items="${jours}" var="jour">
 				<tr class="tableRow">
-					<td>${jour.date}</td>
+					<td>${jour}</td>
 					<td colspan="5"><c:choose>
 							<c:when test="${jour.gif eq null}">
 								<p>${jour.nbPoints}points</p>

@@ -50,9 +50,8 @@ public class Jour {
 		this.gif = gif;
 	}
 
-	@Override
 	public String toString() {
-		return "Jour [date=" + date + ", nbPoints=" + nbPoints + ", gif=" + gif + "]";
+		return date.getDayOfMonth() + "/" +  date.getMonthValue();
 	}
 
 }
